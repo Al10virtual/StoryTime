@@ -13,6 +13,6 @@ class User < ApplicationRecord
               presence: true,
               format: { with: /\A[a-zA-Z]+\z/, message: "Only allows letters.." }
   has_many :user_families
-  has_many :families, through: :user_families
+  has_many :families, through: :user_families, dependent: :destroy
   has_many :my_families, class_name: 'Family'
 end
