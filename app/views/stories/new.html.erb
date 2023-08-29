@@ -1,0 +1,26 @@
+<%= form_for [@kid, @story] do |f| %>
+  <div>
+    <%= f.label :story_theme, "Type d’histoires" %>
+    <%= f.select :story_theme, options_for_select([
+      ['Aventure', 'Aventure'],
+      ['Mystère', 'Mystère'],
+      # ... Add other story types here ...
+    ], selected: 'Aventure') %>
+  </div>
+
+  <div>
+    <%= f.label :environment, "Cadres/Environnements" %>
+    <%= f.select :environment, options_for_select([
+      ['Forêt magique', 'Forêt magique'],
+      ['Château', 'Château'],
+      # ... Add other environments here ...
+    ]) %>
+  </div>
+
+  <div>
+    <%= f.label :duration, "Durée souhaitée de l'histoire" %>
+    <%= f.select :duration, ['Courte', 'Moyenne', 'Longue'] %>
+  </div>
+
+  <%= f.submit "Generate Story" %>
+<% end %>
