@@ -23,11 +23,11 @@ UserFamily.create!(role: 'parent', family: family_one, user: first_user)
 puts "Creating kids..."
 
 first_kid = Kid.create!({  first_name: "Elodie",
-                           date_of_birth: Date.new(2016, 5, 12),
+                           date_of_birth: Date.new(2018, 5, 12),
                            family: family_one })
 
-second_kid = Kid.create!({  first_name: "Elia",
-                            date_of_birth: Date.new(2018, 11, 23),
+second_kid = Kid.create!({  first_name: "Paolo",
+                            date_of_birth: Date.new(2016, 10, 9),
                             family: family_one })
 
 file = URI.open("https://images.unsplash.com/photo-1554342321-0776d282ceac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80")
