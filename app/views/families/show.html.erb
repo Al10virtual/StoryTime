@@ -1,0 +1,5 @@
+<% @kids.each do |kid| %>
+  <%= link_to kid_path(kid) do %>
+    <%= kid.first_name %>
+  <% end %>
+<% end %>

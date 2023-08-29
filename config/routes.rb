@@ -15,8 +15,7 @@ Rails.application.routes.draw do
     # éventuellemment except index, si toutes les stories sont dans la show du kid
   end
 
-  resources :families do
-    resources :user_families
+  resources :families, except: %i[index edit update] do
+    resources :user_families, only: %i[new create]
   end
-
 end
