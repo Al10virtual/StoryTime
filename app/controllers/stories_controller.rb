@@ -31,7 +31,7 @@ class StoriesController < ApplicationController
   end
 
   def generate_story_content(story)
-    prompt = "Create a #{story.duration} #{story.story_type} story set in a #{story.environment}."
+    prompt = "Crée une histoire #{story.duration} sur le thème #{story.theme}."
     ChatGptService.generate_story(prompt)
   end
 end
