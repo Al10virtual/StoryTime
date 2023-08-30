@@ -29,6 +29,9 @@ gem "jbuilder"
 
 gem "cloudinary"
 
+#gem "google-cloud-speech" # test 1
+#gem "google-cloud-text_to_speech"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
