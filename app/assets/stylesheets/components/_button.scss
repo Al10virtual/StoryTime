@@ -1,0 +1,14 @@
+.custom-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgb(230, 221, 221);
+  color: rgb(31, 18, 18);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.custom-button:hover {
+  background-color: #e3ebf3;
+}
