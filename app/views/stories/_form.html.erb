@@ -16,6 +16,12 @@
           label: "Quel sera sa durée ?",
           collection: Story.lenghts %>
 
+    <%= f.simple_fields_for :answer, @answer do |a| %>
+      <%= a.association :question, as: :hidden %>
+      <%= a.label @contextual_question.title %>
+      <%= a.input :content, as: :text, label: false, placeholder: "Votre réponse..." %>
+    <% end %>
+
   <%= f.submit "Valider", class: "custom-button",
                           data: { action: "story#toggleContent story#hideForm" } %>
 <% end %>
