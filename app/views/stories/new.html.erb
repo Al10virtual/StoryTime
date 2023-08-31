@@ -1,17 +1,18 @@
-<%= form_for [@kid, @story] do |f| %>
-  <div>
-    <%= f.label :theme, "Type d’histoires" %>
-    <%= f.select :theme, options_for_select([
-      ['Aventure', 'Aventure'],
-      ['Mystère', 'Mystère'],
-      # ... Add other story types here ...
-    ], selected: 'Aventure') %>
+<div data-controller="story">
+  <div class="container" data-story-target="form">
+    <h1> Une nouvelle histoire </h1>
+    <h2>pour <%= @kid.first_name %></h2>
+    <br>
+    <%= render "stories/form", kid: @kid, story: @story %>
   </div>
 
-  <div>
-    <%= f.label :lenght, "Durée souhaitée de l'histoire" %>
-    <%= f.select :lenght, ['Courte', 'Moyenne', 'Longue'] %>
-  </div>
+  <br>
+  <br>
 
-  <%= f.submit "Generate Story" %>
-<% end %>
+  <div class="container d-none" data-story-target="content">
+    <h1>La magie de StoryTime opère..</h1>
+    <ol>✅ Analyse des passions de <%= @kid.first_name %>..</ol>
+    <ol>✅ Création de son histoire..</ol>
+    <ol>✅ Encore un petit instant..</ol>
+  </div>
+</div>

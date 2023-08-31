@@ -1,0 +1,20 @@
+<nav class="mobile-nav">
+  <div class="bloc-icon">
+    <%= link_to kid_stories_path(:id) do %>
+      <%= image_tag "icons/book-open.svg", class:"icon-color" %>
+      <div>Histoires</div>
+    <% end %>
+  </div>
+  <div class="bloc-icon">
+    <%= link_to new_kid_story_path(:id) do %>
+      <%= image_tag "icons/play.svg", class:"icon-color" %>
+      <div>Créer</div>
+    <% end %>
+  </div>
+  <div class="bloc-icon">
+    <%= link_to family_path(:id) do %>
+      <%= image_tag "icons/users.svg", class:"icon-color" %>
+      <div>Ma Famille</div>
+    <% end %>
+  </div>
+</nav>

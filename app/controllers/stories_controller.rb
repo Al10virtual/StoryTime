@@ -6,8 +6,9 @@ class StoriesController < ApplicationController
   end
 
   def create
-    @story = @kid.stories.build(story_params)
-    @story.content = generate_story_content(@story)
+    @story = Story.new(theme: story_params[:theme], lenght: story_params[:lenght].to_i)
+    @story.kid = @kid
+    generate_story_content(@story)
 
     if @story.save
       redirect_to kid_story_path(@kid, @story)
@@ -27,12 +28,19 @@ class StoriesController < ApplicationController
   end
 
   def story_params
-    params.require(:story).permit(:story_type, :environment, :duration)
+    params.require(:story).permit(:theme, :lenght)
+  end
+
+  def calculate_age(date_of_birth)
+    today = Date.today
+    age = today.year - date_of_birth.year
+    age -= 1 if today < date_of_birth + age.years
+    age
   end
 
   def generate_story_content(story)
-    prompt = "Crée une histoire #{story.duration} sur le thème #{story.theme}."
-    ChatGptService.generate_story(prompt)
+    story.prompt = "Agis comme un auteur pour enfants à succès. Ecris-moi une histoire #{story.lenght} sur le thème #{story.theme} pour #{@kid.first_name} qui a #{calculate_age(@kid.date_of_birth)} ans. "
+    story.content = ChatGptService.generate_story(story.prompt)
   end
 
   def generate_story_speech
