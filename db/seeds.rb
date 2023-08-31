@@ -47,7 +47,7 @@ second_kid.photo.attach(io: file, filename: "elia.jpg", content_type: "image/jpg
 puts "Created kids!"
 
 
-puts "puts Creating stories..."
+puts "Creating stories..."
 
 first_story = Story.create!({
   title: "une forêt enchantée",
