@@ -1,6 +1,7 @@
 puts "Cleaning database..."
 Family.destroy_all
 User.destroy_all
+Story.destroy_all
 
 puts "Creating users..."
 
@@ -44,6 +45,19 @@ file = URI.open("https://images.unsplash.com/photo-1552873816-636e43209957?ixlib
 second_kid.photo.attach(io: file, filename: "elia.jpg", content_type: "image/jpg")
 
 puts "Created kids!"
+
+
+puts "puts Creating stories..."
+
+first_story = Story.create!({
+  title: "une forêt enchantée",
+  theme: "aventure",
+  content: "Il était une fois, dans un petit village au cœur d’une forêt enchantée, vivait un jeune garçon nommé Hugo.",
+  kid_id: Kid.first.id,
+  prompt: "raconte-nous une histoire avec Hugo en personnage principale",
+  lenght: 200,
+  duration: 200
+})
 
 puts "Creating questions..."
 

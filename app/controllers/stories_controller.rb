@@ -42,4 +42,8 @@ class StoriesController < ApplicationController
     story.prompt = "Agis comme un auteur pour enfants à succès. Ecris-moi une histoire #{story.lenght} sur le thème #{story.theme} pour #{@kid.first_name} qui a #{calculate_age(@kid.date_of_birth)} ans. "
     story.content = ChatGptService.generate_story(story.prompt)
   end
+
+  def generate_story_speech
+  end
+
 end
