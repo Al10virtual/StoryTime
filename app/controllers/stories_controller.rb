@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-  before_action :set_kid, only: [:new, :create, :show]
+  before_action :set_kid, only: %i[new create show]
 
   def new
     @story = Story.new
@@ -16,6 +16,7 @@ class StoriesController < ApplicationController
     @contextual_question = Question.find(params.dig(:story, :answer, :question_id))
     @answer = Answer.new(content: params.dig(:story, :answer, :content), kid: @kid, question: @contextual_question)
     generate_story_content(@story)
+
 
     if @story.save
       redirect_to kid_story_path(@kid, @story)

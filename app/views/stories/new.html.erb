@@ -1,18 +1,21 @@
-<div data-controller="story">
-  <div class="container" data-story-target="form">
-    <h1> Une nouvelle histoire </h1>
+<div class="container">
+  <div class="col-auto">
+    <a href="<%= kid_path(@kid) %>" class="btn btn-white btn-arrow">
+      <span class="arrow-icon">←</span>
+    </a>
+  </div>
+  <div class="col-auto">
+    <h1>Une nouvelle histoire</h1>
     <h2>pour <%= @kid.first_name %></h2>
-    <br>
-    <%= render "stories/form", kid: @kid, story: @story %>
   </div>
-
-  <br>
-  <br>
-
-  <div class="container d-none" data-story-target="content">
-    <h1>La magie de StoryTime opère..</h1>
-    <ol>✅ Analyse des passions de <%= @kid.first_name %>..</ol>
-    <ol>✅ Création de son histoire..</ol>
-    <ol>✅ Encore un petit instant..</ol>
-  </div>
+  <div>
+    <div data-controller="story" data-story-target="form">
+      <%= render "form", kid: @kid, story: @story, class: 'd-block justify-content-center align-items-center' %>
+    </div>
+    <div class="d-none" data-story-target="content">
+      <h1>La magie de StoryTime opère..</h1>
+      <ol>✅ Analyse des passions de <%= @kid.first_name %>..</ol>
+      <ol>✅ Création de son histoire..</ol>
+      <ol>✅ Encore un petit instant..</ol>
+    </div>
 </div>

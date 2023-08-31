@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   end
 
   resources :families, except: %i[index edit update] do
-    resources :kids, only: :create
+    resources :kids, only: %i[new create]
     resources :user_families, only: %i[new create]
   end
 end

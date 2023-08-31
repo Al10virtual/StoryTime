@@ -1,17 +1,23 @@
 <div class=container>
-
   <%= image_tag(@kid.avatar_file_name, class:'avatar-large d-block mt-5 mx-auto') %>
-  <h1 class="text-center"><%= @kid.first_name %>, <span class="fs-4"><%= @kid.age %> ans</span></h1>
-
-    <% @kid.stories.each do |story| %>
-    <%= link_to kid_story_path(story.id) do %>
-      <%= image_tag("banner2.jpg") %>
-      <h1 class="text-center"><%= story.title %></h1>
-      <p class="text-center"><%= story.theme %></p>
-      <p class="text-center"><%= story.content %></p>
-      <p class="text-center"><%= story.lenght %></p>
-      <p class="text-center"><%= story.duration %></p>
+  <h1 class="text-center"><%= @kid.first_name %></h1>
+  <h5 class="text-center"><%= @kid.age %> ans</h2>
+  <% @kid.stories.each do |story| %>
+    <%= link_to kid_story_path(@kid, story) do %>
+      <div class="card-top" style="background-image: url('<%= image_path 'banner2.jpg' %>')"></div>
+      <div class="card-bottom">
+        <h6 class="card-title"><%= story.title.upcase %></h5>
+        <div class="d-flex justify-content-between">
+          <div class="custom-button">Réécouter</div>
+        </div>
+      </div>
     <% end %>
   <% end %>
-
+  <a href="#" class="float">
+    <%= link_to new_kid_story_path(@kid), class:"float" do %>
+      <i class="fa fa-plus my-float"></i>
+    <% end %>
+  </a>
+  <div style="padding: 100px">
+  </div>
 </div>

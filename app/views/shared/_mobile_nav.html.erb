@@ -1,19 +1,19 @@
 <nav class="mobile-nav">
   <div class="bloc-icon">
     <%= link_to '#' do %>
-      <%= image_tag "icons/book-open.svg", class:"icon-color" %>
+      <%= image_tag "icons/book-open.svg"%>
       <div>Histoires</div>
     <% end %>
   </div>
   <div class="bloc-icon">
     <%= link_to '#' do %>
-      <%= image_tag "icons/play.svg", class:"icon-color" %>
+      <%= image_tag "icons/play.svg"%>
       <div>Créer</div>
     <% end %>
   </div>
   <div class="bloc-icon">
-    <%= link_to family_path(:id) do %>
-      <%= image_tag "icons/users.svg", class:"icon-color" %>
+    <%= link_to family_path(current_user.families) do %>
+      <%= image_tag "icons/users.svg"%>
       <div>Ma Famille</div>
     <% end %>
   </div>
