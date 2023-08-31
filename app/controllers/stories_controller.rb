@@ -6,7 +6,8 @@ class StoriesController < ApplicationController
   end
 
   def create
-    @story = @kid.stories.build(story_params)
+    @story = Story.new(theme: story_params[:theme], lenght: story_params[:lenght].to_i)
+    @story.kid = @kid
     generate_story_content(@story)
 
     if @story.save
@@ -14,7 +15,6 @@ class StoriesController < ApplicationController
     else
       render :new
     end
-
   end
 
   def show
@@ -42,5 +42,4 @@ class StoriesController < ApplicationController
     story.prompt = "Agis comme un auteur pour enfants à succès. Ecris-moi une histoire #{story.lenght} sur le thème #{story.theme} pour #{@kid.first_name} qui a #{calculate_age(@kid.date_of_birth)} ans. "
     story.content = ChatGptService.generate_story(story.prompt)
   end
-
 end

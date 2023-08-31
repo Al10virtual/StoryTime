@@ -3,8 +3,8 @@ class Story < ApplicationRecord
   belongs_to :kid
   has_one_attached :audio
   enum :lenght, {
-    Courte: 0,
-    Moyenne: 1,
-    Longue: 2
+    courte: 0,
+    moyenne: 1,
+    longue: 2
   }
 end
