@@ -56,7 +56,7 @@ puts "Created questions!"
 
 puts "Creating answers..."
 
-answer_one = Answer.create!(
+Answer.create!(
   content: "Rexo",
   kid: first_kid,
   question: question_one
