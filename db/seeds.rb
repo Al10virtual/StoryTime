@@ -85,6 +85,55 @@ question_one = Question.create!(
   contextual: false
 )
 
+question_two = Question.create!(
+  title: "Quel est la date de naissance de #{@kid.first_name}?",
+  contextual: false
+)
+
+question_three = Question.create!(
+  title: "Quel est le prénom de son doudou ?",
+  contextual: false
+)
+
+question_four = Question.create!(
+  title: "Quel est le prénom de son doudou ?",
+  contextual: false
+)
+
+question_five = Question.create!(
+  title: "Quel est le prénom de son doudou ?",
+  contextual: false
+)
+
+question_six = Question.create!(
+  title: "Quel est le prénom de son doudou ?",
+  contextual: false
+)
+
+question_seven = Question.create!(
+  title: "Quel est le prénom de son doudou ?",
+  contextual: false
+)
+
+question_eight = Question.create!(
+  title: "Quel est le prénom de son doudou ?",
+  contextual: false
+)
+
+question_nine = Question.create!(
+  title: "Quel est le prénom de son doudou ?",
+  contextual: false
+)
+
+question_ten = Question.create!(
+  title: "Quel est le prénom de son doudou ?",
+  contextual: false
+)
+
+question_eleven = Question.create!(
+  title: "Quel est le prénom de son doudou ?",
+  contextual: false
+)
 puts "Created questions!"
 
 puts "Creating answers..."
