@@ -1,12 +1,12 @@
 <div class="container">
-  <div class="row justify-content-start align-items-center">
-    <div class="col-auto">
-      <a href="<%= kid_path(@kid) %>" class="btn btn-white btn-arrow">
-        <span class="arrow-icon">←</span>
-      </a>
+  <div class="row justify-content-start align-items-center pt-3">
+    <div class="col-auto left-arrow">
+      <%= link_to kid_path(@kid) do %>
+        <%= image_tag "icons/arrow-left.svg"%>
+      <% end %>
     </div>
     <div class="col-auto">
-      <h1>title: <%= @story.title %></h1>
+      <h1><%= @story.title %></h1>
     </div>
   </div>
   <div class="row mt-5">

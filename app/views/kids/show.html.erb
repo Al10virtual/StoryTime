@@ -1,23 +1,31 @@
-<div class=container>
-  <%= image_tag(@kid.avatar_file_name, class:'avatar-large d-block mt-5 mx-auto') %>
-  <h1 class="text-center"><%= @kid.first_name %></h1>
-  <h5 class="text-center"><%= @kid.age %> ans</h2>
-  <% @kid.stories.each do |story| %>
-    <%= link_to kid_story_path(@kid, story) do %>
-      <div class="card-top" style="background-image: url('<%= image_path 'banner2.jpg' %>')"></div>
-      <div class="card-bottom">
-        <h6 class="card-title"><%= story.title.upcase %></h5>
-        <div class="d-flex justify-content-between">
-          <div class="custom-button">Réécouter</div>
+<div class="container">
+  <div class="row justify-content-start align-items-center pt-3">
+    <div class="col-auto left-arrow">
+      <%= link_to family_path(current_user.families) do %>
+        <%= image_tag "icons/arrow-left.svg"%>
+      <% end %>
+    </div>
+    <div>
+      <%= image_tag(@kid.avatar_file_name, class:'avatar-large d-block mt-5 mx-auto') %>
+    </div>
+    <h1 class="text-center"><%= @kid.first_name %></h1>
+    <h5 class="text-center"><%= @kid.age %> ans</h2>
+    <% @kid.stories.each do |story| %>
+      <%= link_to kid_story_path(@kid, story) do %>
+        <div class="card-top" style="background-image: url('<%= image_path 'banner2.jpg' %>')"></div>
+        <div class="card-bottom">
+          <h6 class="card-title"><%= story.title.upcase %></h5>
+          <div class="d-flex justify-content-between">
+            <div class="custom-button">Réécouter</div>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
-  <a href="#" class="float">
-    <%= link_to new_kid_story_path(@kid), class:"float" do %>
-      <i class="fa fa-plus my-float"></i>
-    <% end %>
-  </a>
-  <div style="padding: 100px">
+    <a href="#" class="float">
+      <%= link_to new_kid_story_path(@kid), class:"float" do %>
+        <i class="fa fa-plus my-float"></i>
+      <% end %>
+    </a>
+    <div style="padding: 100px">
+    </div>
   </div>
-</div>

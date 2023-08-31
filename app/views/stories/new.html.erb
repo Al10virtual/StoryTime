@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="col-auto">
-    <a href="<%= kid_path(@kid) %>" class="btn btn-white btn-arrow">
-      <span class="arrow-icon">←</span>
-    </a>
+  <div class="bloc-icon col-auto pt-3">
+    <%= link_to kid_path(@kid) do %>
+      <%= image_tag "icons/arrow-left.svg"%>
+    <% end %>
   </div>
   <div class="col-auto">
     <h1>Une nouvelle histoire</h1>
@@ -18,4 +18,4 @@
       <ol>✅ Création de son histoire..</ol>
       <ol>✅ Encore un petit instant..</ol>
     </div>
-</div>
+  </div>
