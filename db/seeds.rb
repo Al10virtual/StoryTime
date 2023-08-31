@@ -46,10 +46,9 @@ second_kid.photo.attach(io: file, filename: "elia.jpg", content_type: "image/jpg
 
 puts "Created kids!"
 
-
 puts "Creating stories..."
 
-first_story = Story.create!({
+Story.create!(
   title: "une forêt enchantée",
   theme: "aventure",
   content: "Il était une fois, dans un petit village au cœur d’une forêt enchantée, vivait un jeune garçon nommé Hugo.",
@@ -57,7 +56,7 @@ first_story = Story.create!({
   prompt: "raconte-nous une histoire avec Hugo en personnage principale",
   lenght: 1,
   duration: 200
-})
+)
 
 puts "Creating questions..."
 
