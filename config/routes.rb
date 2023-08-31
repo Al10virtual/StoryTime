@@ -19,4 +19,7 @@ Rails.application.routes.draw do
     resources :kids, only: :create
     resources :user_families, only: %i[new create]
   end
+
+
+
 end

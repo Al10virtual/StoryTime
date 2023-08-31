@@ -29,9 +29,10 @@ class GoogleSpeechClient
         "speakingRate": 1
       }
     })
+    wordSub = "Speech"
     base64mp3 = self.class.post("/text:synthesize", { body: data }.merge(@options))["audioContent"]
-    file_name = I18n.transliterate(word).gsub(/[^0-9A-Za-z]/, '_').downcase
-    save_path = Rails.root.join('public', "#{file_name}.mp3")
+    file_name = I18n.transliterate(wordSub).gsub(/[^0-9A-Za-z]/, '_').downcase
+    save_path = Rails.root.join('public/speech', "#{file_name}.mp3")
     mp3_file = File.open(save_path, "wb") do |file|
       file.write(Base64.decode64(base64mp3))
     end

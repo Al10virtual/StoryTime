@@ -43,7 +43,4 @@ class StoriesController < ApplicationController
     story.content = ChatGptService.generate_story(story.prompt)
   end
 
-  def generate_story_speech
-  end
-
 end
