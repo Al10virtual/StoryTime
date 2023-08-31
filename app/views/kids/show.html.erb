@@ -1,1 +1,6 @@
-<%= cl_image_tag(@kid.photo.key, height: 300, style:'border-radius: 3%;', crop: :thumb) %>
+<div class=container>
+
+  <%= cl_image_tag(@kid.photo.key, class:'avatar-large d-block mt-5 mx-auto') %>
+  <h1 class="text-center"><%= @kid.first_name %>, <span class="fs-4"><%= @kid.age %> ans</span></h1>
+
+</div>

@@ -55,7 +55,7 @@ first_story = Story.create!({
   content: "Il était une fois, dans un petit village au cœur d’une forêt enchantée, vivait un jeune garçon nommé Hugo.",
   kid_id: Kid.first.id,
   prompt: "raconte-nous une histoire avec Hugo en personnage principale",
-  lenght: 200,
+  lenght: 1,
   duration: 200
 })
 
