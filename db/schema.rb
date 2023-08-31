@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_29_120200) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_30_151144) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,9 +45,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_120200) do
   create_table "answers", force: :cascade do |t|
     t.string "content"
     t.bigint "kid_id", null: false
+    t.bigint "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["kid_id"], name: "index_answers_on_kid_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
   create_table "families", force: :cascade do |t|
@@ -69,11 +71,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_120200) do
 
   create_table "questions", force: :cascade do |t|
     t.string "title"
-    t.integer "type"
-    t.bigint "answer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["answer_id"], name: "index_questions_on_answer_id"
+    t.boolean "contextual"
   end
 
   create_table "stories", force: :cascade do |t|
@@ -116,9 +116,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_120200) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "kids"
+  add_foreign_key "answers", "questions"
   add_foreign_key "families", "users"
   add_foreign_key "kids", "families"
-  add_foreign_key "questions", "answers"
   add_foreign_key "stories", "kids"
   add_foreign_key "user_families", "families"
   add_foreign_key "user_families", "users"

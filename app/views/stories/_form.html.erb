@@ -1,0 +1,21 @@
+<%= simple_form_for [@kid, @story] do |f| %>
+
+  <%= f.input :theme,
+          as: :radio_buttons,
+          collection_wrapper_tag: 'div',
+          collection_wrapper_class: 'theme-wrapper',
+          item_wrapper_class: 'theme-item',
+          input_html: { class: 'theme-selector' },
+          label: "Quel sera son thème ?",
+          collection: Story::THEMES %>
+
+  <%= f.input :lenght,
+          as: :radio_buttons,
+          input_html: { class: "tag-selector" },
+          item_wrapper_class: 'tag-item',
+          label: "Quel sera sa durée ?",
+          collection: Story.lenghts %>
+
+  <%= f.submit "Valider", class: "custom-button",
+                          data: { action: "story#toggleContent story#hideForm" } %>
+<% end %>
