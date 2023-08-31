@@ -1,6 +1,17 @@
 <div class=container>
 
-  <%= cl_image_tag(@kid.photo.key, class:'avatar-large d-block mt-5 mx-auto') %>
+  <%= image_tag(@kid.avatar_file_name, class:'avatar-large d-block mt-5 mx-auto') %>
   <h1 class="text-center"><%= @kid.first_name %>, <span class="fs-4"><%= @kid.age %> ans</span></h1>
+
+    <% @kid.stories.each do |story| %>
+    <%= link_to kid_story_path(story.id) do %>
+      <%= image_tag("banner2.jpg") %>
+      <h1 class="text-center"><%= story.title %></h1>
+      <p class="text-center"><%= story.theme %></p>
+      <p class="text-center"><%= story.content %></p>
+      <p class="text-center"><%= story.lenght %></p>
+      <p class="text-center"><%= story.duration %></p>
+    <% end %>
+  <% end %>
 
 </div>
