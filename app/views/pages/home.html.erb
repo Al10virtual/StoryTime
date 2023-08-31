@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'banner.jpg' %>)">
+  <div class="banner-elements">
+    <h1>StoryTime</h1>
+    <p>Créez des histoires personnalisées pour vos enfants</p>
+    <%= link_to new_user_registration_path do %>
+      <button class="btn btn-flat w-100">Créer mon compte</button>
+    <% end %>
+  </div>
+</div>
