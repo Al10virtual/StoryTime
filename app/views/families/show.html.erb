@@ -1,8 +1,16 @@
-<% @kids.each do |kid| %>
-  <%= link_to kid_path(kid) do %>
-    <%= kid.first_name %>
-  <% end %>
-<% end %>
+<div class=container>
 
-<h1>Ajouter un enfant</h1>
-<%= render "kids/form", kid: @kid %>
+  <h1 class="text-center text-uppercase mt-3">Les <%= @family.name  %></h1>
+
+  <% @kids.each do |kid| %>
+    <%= link_to kid_path(kid) do %>
+      <%= image_tag(kid.avatar_file_name, class:'avatar-large d-block mt-5 mx-auto') %>
+      <h1 class="text-center"><%= kid.first_name %></h1>
+    <% end %>
+  <% end %>
+
+
+<!-- <h1>Ajouter un enfant</h1> -->
+<%# <%= render "kids/form", kid: @kid %>
+
+</div>

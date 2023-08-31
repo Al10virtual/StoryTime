@@ -1,0 +1,23 @@
+.card {
+  background-size: cover;
+  background-position: center;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-top {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-bottom {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
