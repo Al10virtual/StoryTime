@@ -3,16 +3,19 @@ class StoriesController < ApplicationController
 
   def new
     @story = Story.new
+    @contextual_question = Question.where(contextual: true).sample
+    @answer = Answer.new(question: @contextual_question)
   end
 
   def create
     @story = Story.new(theme: story_params[:theme],
-                       lenght: story_params[:lenght].to_i,
-                       title: "Ma nouvelle histoire")
-    # récupérer titre theme et lenght de l'histoire
+                       lenght: story_params[:lenght].to_i)
 
     @story.kid = @kid
+    @contextual_question = Question.find(params.dig(:story, :answer, :question_id))
+    @answer = Answer.new(content: params.dig(:story, :answer, :content), kid: @kid, question: @contextual_question)
     generate_story_content(@story)
+
 
     if @story.save
       redirect_to kid_story_path(@kid, @story)
@@ -43,10 +46,7 @@ class StoriesController < ApplicationController
   end
 
   def generate_story_content(story)
-    story.prompt = "Agis comme un auteur pour enfants à succès. Ecris-moi une histoire
-                    #{story.lenght} sur le thème #{story.theme} pour #{@kid.first_name} qui a
-                    #{calculate_age(@kid.date_of_birth)} ans."
-
+    story.prompt = "Agis comme un auteur pour enfants à succès. Ecris une histoire #{story.lenght} de type #{story.theme} pour #{@kid.first_name}. Adapte l'histoire à son age (#{calculate_age(@kid.date_of_birth)} ans). De plus, ajoute dans l'histoire le context suivant: à la question suivante, #{@contextual_question.title}, les parents de #{@kid.first_name} ont répondu #{@answer.content}"
     story.content = ChatGptService.generate_story(story.prompt)
   end
 

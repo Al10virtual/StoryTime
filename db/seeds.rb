@@ -77,3 +77,87 @@ Story.create!({
 })
 
 puts "Story 3 created"
+
+puts "Creating questions..."
+
+question_teddy = Question.create!(
+  title: "Quel est le prénom de son doudou ?",
+  contextual: false
+)
+
+question_date_of_birth = Question.create!(
+  title: "Quel est la date de naissance de votre enfant?",
+  contextual: false
+)
+
+question_dish = Question.create!(
+  title: "Quel est le plat préféré de votre enfant ?",
+  contextual: false
+)
+
+question_toy = Question.create!(
+  title: "Quel est le jouet préféré de votre enfant ?",
+  contextual: false
+)
+
+question_favorite_pet = Question.create!(
+  title: "Quel animal préféré de votre enfant ?",
+  contextual: false
+)
+
+question_book = Question.create!(
+  title: "Quel est le livre préféré de votre enfant ?",
+  contextual: false
+)
+
+question_song = Question.create!(
+  title: "Quelle est la chanson préférée de votre enfant ?",
+  contextual: false
+)
+
+question_pet = Question.create!(
+  title: "Est-ce que votre enfant a un animal de compagnie ? De quel animal s’agit-il et quel est son nom ?",
+  contextual: false
+)
+
+question_dad = Question.create!(
+  title: "Comment s’appelle le papa de votre enfant ?",
+  contextual: false
+)
+
+question_mum = Question.create!(
+  title: "Comment s’appelle la maman de votre enfant ?",
+  contextual: false
+)
+
+question_magical_place = Question.create!(
+  title: "Quel genre d'endroits magiques ou fantastiques votre enfant aimerait visiter ?",
+  contextual: true
+)
+
+question_values = Question.create!(
+  title: "Quelles sont les valeurs importantes que vous souhaitez transmettre à travers cette histoire ?",
+  contextual: true
+)
+
+question_leson = Question.create!(
+  title: "Y a-t-il une leçon importante que vous voulez que votre enfant apprenne dans l'histoire ?",
+  contextual: true
+)
+
+question_fears = Question.create!(
+  title: "votre enfant a-t-il une peur ou une difficulté particulière à surmonter ?",
+  contextual: true
+)
+
+puts "Created questions!"
+
+puts "Creating answers..."
+
+Answer.create!(
+  content: "Rexo",
+  kid: first_kid,
+  question: question_teddy
+)
+
+puts "Created answers!"
