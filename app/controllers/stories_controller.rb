@@ -9,14 +9,13 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(theme: story_params[:theme],
-                       lenght: story_params[:lenght].to_i,
-                       title: "Ma nouvelle histoire")
-    # récupérer titre theme et lenght de l'histoire
+                       lenght: story_params[:lenght].to_i)
 
     @story.kid = @kid
     @contextual_question = Question.find(params.dig(:story, :answer, :question_id))
     @answer = Answer.new(content: params.dig(:story, :answer, :content), kid: @kid, question: @contextual_question)
     generate_story_content(@story)
+
 
     if @story.save
       redirect_to kid_story_path(@kid, @story)

@@ -1,7 +1,14 @@
-<br>
-
 <div class="container">
-  <h1><%= @story.title %></h1>
+  <div class="row justify-content-start align-items-center">
+    <div class="col-auto">
+      <a href="<%= kid_path(@kid) %>" class="btn btn-white btn-arrow">
+        <span class="arrow-icon">←</span>
+      </a>
+    </div>
+    <div class="col-auto">
+      <h1>title: <%= @story.title %></h1>
+    </div>
+  </div>
 
   <div class="row mt-5">
     <div class="col-12">
