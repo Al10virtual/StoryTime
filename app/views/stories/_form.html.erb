@@ -1,5 +1,4 @@
 <%= simple_form_for [@kid, @story] do |f| %>
-
   <%= f.input :theme,
           as: :radio_buttons,
           collection_wrapper_tag: 'div',
@@ -8,20 +7,16 @@
           input_html: { class: 'theme-selector' },
           label: "Quel sera son thème ?",
           collection: Story::THEMES %>
-
   <%= f.input :lenght,
           as: :radio_buttons,
           input_html: { class: "tag-selector" },
           item_wrapper_class: 'tag-item',
           label: "Quel sera sa durée ?",
           collection: Story.lenghts %>
-
-    <%= f.simple_fields_for :answer, @answer do |a| %>
+  <%= f.simple_fields_for :answer, @answer do |a| %>
       <%= a.association :question, as: :hidden %>
       <%= a.label @contextual_question.title %>
       <%= a.input :content, as: :text, label: false, placeholder: "Votre réponse..." %>
     <% end %>
-
-  <%= f.submit "Valider", class: "custom-button",
-                          data: { action: "story#toggleContent story#hideForm" } %>
+  <%= f.submit "Valider", class: "custom-button w-100", data: { action: "story#toggleContent story#hideForm" } %>
 <% end %>

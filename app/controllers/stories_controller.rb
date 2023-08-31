@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-  before_action :set_kid, only: [:new, :create, :show]
+  before_action :set_kid, only: %i[new create show]
 
   def new
     @story = Story.new
