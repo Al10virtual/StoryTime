@@ -1,25 +1,26 @@
-<div class="my_container" data-controller="story">
-  <div data-story-target="form">
-    <div class="bloc-icon col-auto pt-3">
+<div class="my-container">
+  <div class="row justify-content-start align-items-center pt-3">
+    <div class="col-auto left-arrow">
       <%= link_to kid_path(@kid) do %>
         <%= image_tag "icons/arrow-left.svg"%>
       <% end %>
     </div>
-    <div class="col-auto">
-      <h1>Une nouvelle histoire</h1>
-      <h2>pour <%= @kid.first_name %></h2>
-    </div>
-    <div data-story-target="form">
-      <%= render "form", kid: @kid, story: @story, class: 'd-block justify-content-center align-items-center' %>
-    </div>
   </div>
-  <div data-story-target="content" class="d-none">
-    <br>
-    <h1>La magie de StoryTime opère..</h1>
-    <ol>✅ Analyse des passions de <%= @kid.first_name %>..</ol>
-    <ol>✅ Création de son histoire..</ol>
-    <ol>✅ Encore un petit instant..</ol>
+  <div class="col-auto">
+    <h2>Une nouvelle histoire</h2>
+    <h3>pour <%= @kid.first_name %></h3>
+  </div>
+  <div data-controller="story" data-story-target="form">
+    <%= render "form", kid: @kid, story: @story, class: 'd-block justify-content-center align-items-center' %>
   </div>
   <div style="padding: 100px">
   </div>
+</div>
+<div data-story-target="content" class="d-none">
+  <br>
+  <h1>La magie de StoryTime opère..</h1>
+  <ol>✅ Analyse des passions de <%= @kid.first_name %>..</ol>
+  <ol>✅ Création de son histoire..</ol>
+  <ol>✅ Encore un petit instant..</ol>
+</div>
 </div>
