@@ -26,12 +26,7 @@
       <div>
         <div class="row justify-content-center align-items-center">
           <div class="col-auto">
-            <div data-controller="play" data-action="click->play#go" data-play-audio-file-value="<%= @story.audio.url.gsub(/\.mpga/, ".mp3") %>">
-              <%= image_tag "icons/play-circle.svg"%>
-            </div>
-          </div>
-          <div class="col-auto">
-
+            <%= image_tag "icons/play-circle.svg"%>
           </div>
         </div>
       </div>
