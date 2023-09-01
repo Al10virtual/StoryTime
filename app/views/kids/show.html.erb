@@ -10,6 +10,11 @@
     </div>
     <h1 class="text-center"><%= @kid.first_name %></h1>
     <h2 class="text-center mb-3"><%= @kid.age %> ans</h2>
+    <h2>Son monde</h2>
+    <p><%= @kid.answers do |answer| %>
+      <%= answer.title.upcase %>
+    </p>
+    <h2>Ses <%= @kid.stories.count %> histoires</h2>
     <% @kid.stories.each do |story| %>
       <%= link_to kid_story_path(@kid, story) do %>
         <div class ="card-kid">

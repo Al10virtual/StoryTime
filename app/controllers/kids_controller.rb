@@ -1,6 +1,7 @@
 class KidsController < ApplicationController
   def show
     @kid = Kid.find(params[:id])
+    @stories = @kid.stories
   end
 
   def new
