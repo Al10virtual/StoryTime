@@ -6,10 +6,10 @@
       <% end %>
     </div>
     <div>
-      <%= image_tag(@kid.avatar_file_name, class:'avatar-large d-block mt-5 mx-auto') %>
+      <%= image_tag(@kid.avatar_file_name, class:'avatar-large d-block mx-auto') %>
     </div>
     <h1 class="text-center"><%= @kid.first_name %></h1>
-    <h5 class="text-center"><%= @kid.age %> ans</h2>
+    <h2 class="text-center"><%= @kid.age %> ans</h2>
     <% @kid.stories.each do |story| %>
       <%= link_to kid_story_path(@kid, story) do %>
         <div class="card-top" style="background-image: url('<%= image_path 'banner2.jpg' %>')"></div>
