@@ -1,24 +1,37 @@
-<div class="my-container">
-  <div class="row justify-content-start align-items-center pt-3">
-    <div class="col-auto left-arrow">
+<div class="my-container" data-controller="story">
+  <div data-story-target="form">
+    <div class="justify-content-start align-items-center pt-3">
       <%= link_to kid_path(@kid) do %>
         <%= image_tag "icons/arrow-left.svg"%>
       <% end %>
     </div>
+    <div>
+      <h1 class="text-center">Une nouvelle histoire pour <%= @kid.first_name %></h1>
+    </div>
+    <div data-story-target="form">
+      <%= render "form", kid: @kid, story: @story, class: 'd-block justify-content-center align-items-center' %>
+    </div>
   </div>
-  <div class="col-auto">
-    <h2>Une nouvelle histoire</h2>
-    <h3>pour <%= @kid.first_name %></h3>
+  <div data-story-target="content" class="d-none">
+    <div class="justify-content-start align-items-center pt-3">
+      <%= link_to kid_path(@kid) do %>
+        <%= image_tag "icons/arrow-left.svg"%>
+      <% end %>
+      <div class="justify-content-start align-items-center pt-3">
+        <h1 class="text-center">La magie de StoryTime opère 🪄</h1>
+        <div class="p-3">
+          <ul>
+            <p class="fs-3 pt-5">✅ Analyse des passions de <%= @kid.first_name %>...</p>
+          </ul>
+          <ul>
+            <p class="fs-3 pt-3">✅ Création de son histoire...</p>
+          </ul>
+          <ul>
+            <p class="fs-3 pt-3">✅ Encore un petit instant...</p>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="padding: 100px">
+    </div>
   </div>
-  <div data-controller="story" data-story-target="form">
-    <%= render "form", kid: @kid, story: @story, class: 'd-block justify-content-center align-items-center' %>
-  </div>
-</div>
-<div data-story-target="content" class="d-none">
-  <br>
-  <h1>La magie de StoryTime opère..</h1>
-  <ol>✅ Analyse des passions de <%= @kid.first_name %>..</ol>
-  <ol>✅ Création de son histoire..</ol>
-  <ol>✅ Encore un petit instant..</ol>
-</div>
-</div>
