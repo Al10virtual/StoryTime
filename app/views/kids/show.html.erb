@@ -13,12 +13,18 @@
     <% @kid.stories.each do |story| %>
       <%= link_to kid_story_path(@kid, story) do %>
         <div class="card-top" style="background-image: url('<%= image_path 'banner2.jpg' %>')"></div>
+
         <div class="card-bottom">
-          <h6 class="card-title"><%= story.title.upcase %></h5>
           <div class="d-flex justify-content-between">
-            <div class="custom-button">Réécouter</div>
+            <div class="col-6">
+             <h6 class="card-title"><%= story.title.upcase %></h6>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+              <div class="custom-button">Réécouter</div>
+            </div>
           </div>
         </div>
+
       <% end %>
     <% end %>
     <a href="#" class="float">
