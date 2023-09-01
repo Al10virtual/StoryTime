@@ -52,7 +52,4 @@ class StoriesController < ApplicationController
     story.content = chat_gpt_response["content"]
     story.title = chat_gpt_response["title"]
   end
-
-  def generate_story_speech
-  end
 end
