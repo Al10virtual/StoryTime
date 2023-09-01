@@ -10,7 +10,7 @@ export default class extends Controller {
 
 
   go() {
-    var audio = new Audio('/speech/story.mp3');
+    var audio = new Audio('/speech/elodie.mp3');
     audio.play();
     this.element.setAttribute("disabled", "");
   }
