@@ -16,7 +16,7 @@
             <p><%= @story.theme %> - durée <%= @story.lenght %></p>
             <div data-controller="read-more" data-read-more-more-text-value="Voir plus" data-read-more-less-text-value="Voir moins">
               <p class="my-content" data-read-more-target="content">
-               <span class="my-content-first-letter"><%= @story.content[0] %></span><%= @story.content[1..-1] %>
+                <span class="my-content-first-letter"><%= @story.content[0] %></span><%= @story.content[1..-1] %>
               </p>
               <button class="custom-button w-100" data-action="read-more#toggle">Lire toute l'histoire</button>
             </div>
@@ -35,5 +35,7 @@
         </div>
       </div>
     </div>
+  </div>
+  <div style="padding: 100px">
   </div>
 </div>
