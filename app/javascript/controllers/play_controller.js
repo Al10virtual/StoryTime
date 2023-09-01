@@ -1,16 +1,21 @@
 import { Controller } from "@hotwired/stimulus"
 
+
+
 // Connects to data-controller="play"
+
 export default class extends Controller {
-  connect() {
-    console.log('connecté a play2')
+  static values = {
+    audioFile: String
   }
 
-
-
+  connect() {
+    console.log(this.audioFileValue);
+  }
 
   go() {
-    var audio = new Audio('/speech/story.mp3');
+    var audio = new Audio('/speech/elodie.mp3');
+    var audio = new Audio(this.audioFileValue);
     audio.play();
     this.element.setAttribute("disabled", "");
   }
