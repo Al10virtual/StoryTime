@@ -1,4 +1,4 @@
-<div class="container">
+<div class="my-container">
   <h2>Se connecter</h2>
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
@@ -14,7 +14,7 @@
       <%= f.input :remember_me, label: "Enregistrer mon mot de passe", as: :boolean if devise_mapping.rememberable? %>
     </div>
     <div class="form-actions">
-      <%= f.button :submit, "Se connecter" %>
+      <%= f.button :submit, "Se connecter", class: "btn btn-flat" %>
     </div>
   <% end %>
   <%= render "devise/shared/links" %>

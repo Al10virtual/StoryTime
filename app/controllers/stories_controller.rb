@@ -16,7 +16,6 @@ class StoriesController < ApplicationController
     @contextual_question = Question.find(params.dig(:story, :answer, :question_id))
     @answer = Answer.new(content: params.dig(:story, :answer, :content), kid: @kid, question: @contextual_question)
     generate_story_content(@story)
-
     if @story.save
       redirect_to kid_story_path(@kid, @story)
     else

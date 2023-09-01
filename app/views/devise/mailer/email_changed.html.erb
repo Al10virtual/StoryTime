@@ -1,4 +1,4 @@
-<div class="container">
+<div class="my-container">
   <p>Bienvenue <%= @email %> !</p>
   <% if @resource.try(:unconfirmed_email?) %>
     <p>Nous vous contactons pour vous informer que votre adresse e-mail est modifiée en <%= @resource.unconfirmed_email %>.</p>

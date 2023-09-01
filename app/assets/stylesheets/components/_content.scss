@@ -3,6 +3,17 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--read-more-line-clamp, 2);
-  text-align: center;
-  font-style: italic;
+  text-align: justify;
+  font-size: 1.3rem;
+  p::first-letter {
+    color: red;
+    font-size: 2rem;
+  }
+}
+
+
+.my-content-first-letter {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #FC7300;
 }
