@@ -1,4 +1,4 @@
-<div class="container">
+<div class="my-container">
   <div class="row justify-content-start align-items-center pt-3">
     <div class="col-auto left-arrow">
       <%= link_to family_path(current_user.families) do %>
@@ -12,15 +12,19 @@
     <h2 class="text-center mb-3"><%= @kid.age %> ans</h2>
     <h2>Son monde</h2>
     <p><%= @kid.answers do |answer| %>
-      <%= answer.title.upcase %>
+        <%= answer.content %>
+      <% end %>
     </p>
     <h2>Ses <%= @kid.stories.count %> histoires</h2>
     <% @kid.stories.each do |story| %>
       <%= link_to kid_story_path(@kid, story) do %>
-        <div class ="card-kid">
+        <div class ="card-story">
           <div class="card-top" style="background-image: url('<%= image_path 'banner2.jpg' %>')"></div>
           <div class="card-bottom">
-            <h6 class="card-title"><%= story.title.upcase %></h6>
+            <div>
+              <h6 class="card-title"><%= story.title.upcase %></h6>
+              <p class="card-infos"><%= story.theme %> - durée <%= story.lenght %></p>
+            </div>
             <div class="custom-button">Réécouter</div>
           </div>
         </div>

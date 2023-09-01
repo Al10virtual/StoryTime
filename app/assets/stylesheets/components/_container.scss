@@ -1,7 +1,17 @@
-.container {
+.my-container {
   max-width: 400px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 5px;
 }
 .container-with-margin-bottom {
+  max-width: 400px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 5px;
   margin-bottom: 70px;
 }
