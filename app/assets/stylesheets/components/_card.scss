@@ -13,11 +13,49 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  padding: 1rem 0;
+  margin-bottom: 1rem;
   justify-content: space-between;
   h2 {
     margin: 0px;
   }
+}
+
+.card-kid {
+  background-size: cover;
+  background-position: center;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  justify-content: space-between;
+  h2 {
+    margin: 0px;
+  }
+}
+
+.card-story {
+  background-size: cover;
+  background-position: center;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+  h2 {
+    margin: 0px;
+  }
+}
+
+.card-story-bottom {
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
 }
 
 .card-top {
@@ -29,11 +67,10 @@
 .card-bottom {
   padding: 20px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 2px;
 }
-
 
 .card-title {
   font-weight: bold;
