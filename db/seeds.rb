@@ -54,17 +54,6 @@ Story.create!({
     duration: 200
 })
 
-
-Story.create!({
-  title: "une nouvelle histoire",
-  theme: "aventure",
-  content: "Elodie savait qu'elle pouvait vivre de grandes aventures, même dans son imagination. Chaque nuit, elle s'endormait en rêvant d'une nouvelle aventure, prête à partir à la découverte de mondes merveilleux. Et c'est ainsi que Elodie devint la plus grande aventurière de son monde imaginaire.",
-  kid_id: Kid.second.id,
-  prompt: "Agis comme un auteur pour enfants à succès. Ecris-moi une histoire moyenne sur le thème Aventure pour Elodie qui a 5 ans.",
-  lenght: 1,
-  duration: 200
-})
-
 puts "Story 1 created"
 
 Story.create!({
