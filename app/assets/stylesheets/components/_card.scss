@@ -1,11 +1,23 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
 .card {
   background-size: cover;
   background-position: center;
+  background: white;
   color: black;
   border: none;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 1rem 0;
+  justify-content: space-between;
+  h2 {
+    margin: 0px;
+  }
 }
 
 .card-top {
