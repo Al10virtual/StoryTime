@@ -58,7 +58,7 @@ Story.create!({
 Story.create!({
   title: "une nouvelle histoire",
   theme: "aventure",
-  content: "Il était une fois une petite fille nommée Elodie, âgée de 5 ans, qui aimait plus que tout les histoires d'aventure. Chaque soir, avant d'aller dormir, sa maman lui racontait une histoire magique qui l'emmenait dans des contrées lointaines et mystérieuses.Un soir, alors qu'il faisait déjà nuit, Elodie s'endormit en rêvant d'une nouvelle aventure. Dans son sommeil, elle se retrouva sur un magnifique bateau pirate, voguant sur une mer étincelante. À bord, elle rencontra le capitaine Barbe Rousse, un pirate au cœur tendre.Le capitaine Barbe Rousse expliqua à Elodie qu'il cherchait un trésor légendaire caché sur une île mystérieuse. Intriguée, Elodie décida de l'aider dans sa quête. Le bateau pirate les transporta jusqu'à l'île, où les attendaient de nombreux défis.Ils devaient traverser une jungle dense remplie d'animaux sauvages. Elodie, courageuse et intrépide, était accompagnée d'un perroquet parlant nommé Coco, qui les guidait à travers les lianes et les arbres majestueux. Ils durent également traverser un pont étroit au-dessus d'un précipice profond. Elodie tenait la main du capitaine, ne montrant aucune peur malgré les vertiges.Enfin, ils atteignirent une grotte sombre et mystérieuse. À l'intérieur, ils découvrirent des énigmes à résoudre pour accéder au trésor. Elodie, avec son esprit vif et sa curiosité sans limite, résolut chaque énigme avec l'aide du capitaine Barbe Rousse.Finalement, ils atteignirent la salle du trésor. Devant leurs yeux émerveillés, se trouvait un coffre en bois orné de bijoux scintillants. Le capitaine Barbe Rousse et Elodie s'embrassèrent joyeusement en signe de victoire.De retour sur le bateau pirate, ils partagèrent le trésor avec leur équipage. Chacun reçut une pièce d'or en souvenir de cette incroyable aventure. Elodie se sentait fière et heureuse d'avoir aidé le capitaine et d'avoir vécu une telle aventure.Le capitaine Barbe Rousse raccompagna Elodie jusqu'à chez elle, où sa maman l'attendait, inquiète. Elodie lui raconta tout, les dangers traversés, les énigmes résolues et le trésor découvert. Sa maman sourit, heureuse de voir briller les yeux de sa petite aventurière.De ce jour-là, Elodie savait qu'elle pouvait vivre de grandes aventures, même dans son imagination. Chaque nuit, elle s'endormait en rêvant d'une nouvelle aventure, prête à partir à la découverte de mondes merveilleux. Et c'est ainsi que Elodie devint la plus grande aventurière de son monde imaginaire."
+  content: "Elodie savait qu'elle pouvait vivre de grandes aventures, même dans son imagination. Chaque nuit, elle s'endormait en rêvant d'une nouvelle aventure, prête à partir à la découverte de mondes merveilleux. Et c'est ainsi que Elodie devint la plus grande aventurière de son monde imaginaire.",
   kid_id: Kid.second.id,
   prompt: "Agis comme un auteur pour enfants à succès. Ecris-moi une histoire moyenne sur le thème Aventure pour Elodie qui a 5 ans.",
   lenght: 1,
@@ -97,7 +97,7 @@ question_one = Question.create!(
 )
 
 question_two = Question.create!(
-  title: "Quel est la date de naissance de #{@kid.first_name}?",
+  title: "Quel est la date de naissance de #{Kid.last.first_name}?",
   contextual: false
 )
 
