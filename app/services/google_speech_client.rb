@@ -29,13 +29,8 @@ class GoogleSpeechClient
         "speakingRate": 1
       }
     })
-    subTitle = "elodie"
-    base64mp3 = self.class.post("/text:synthesize", { body: data }.merge(@options))["audioContent"]
-    file_name = I18n.transliterate(subTitle).gsub(/[^0-9A-Za-z]/, '_').downcase
-    save_path = Rails.root.join('public/speech', "#{file_name}.mp3")
-    mp3_file = File.open(save_path, "wb") do |file|
-      file.write(Base64.decode64(base64mp3))
-    end
+    self.class.post("/text:synthesize", { body: data }.merge(@options))["audioContent"]
+
     # load_to_cloudinary(save_path, file_name)
   end
 
@@ -57,11 +52,4 @@ class GoogleSpeechClient
     JSON.parse(request_token_from_google.body)["access_token"]
   end
 
-  # def load_to_cloudinary(save_path, file_name)
-  #   callback = Cloudinary::Uploader.upload(save_path, {
-  #     resource_type: :video,
-  #     public_id: "audio_fr/#{file_name}"
-  #   })
-  #   { sound_url: callback["secure_url"] } if callback
-  # end
 end
