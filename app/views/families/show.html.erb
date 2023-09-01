@@ -1,5 +1,7 @@
 <div class=container>
   <h1 class="text-center text-uppercase mt-3">Les <%= @family.name  %></h1>
+  <h2 class="pt-3">Bonjour <%= @current_user.first_name  %> !</h2>
+  <h4 class="pt-3">À qui voulez-vous raconter une histoire aujourd'hui ?</h4>
   <% @kids.each do |kid| %>
     <%= link_to kid_path(kid) do %>
       <%= image_tag(kid.avatar_file_name, class:'avatar-large d-block mt-5 mx-auto') %>
@@ -11,4 +13,7 @@
       <i class="fa fa-plus my-float"></i>
     <% end %>
   </a>
+  <div class="text-center font-italic p-5">
+    <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete} %>
+  </div>
 </div>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+
+  get :profile, to: 'families#show'
   # (If 1 kid, root to kids#show -> mais il faut penser à la gestion du compte parents)
   # get 'profile', to: 'pages#profile', as: 'profile'
 
@@ -19,7 +21,4 @@ Rails.application.routes.draw do
     resources :kids, only: %i[new create]
     resources :user_families, only: %i[new create]
   end
-
-
-
 end
