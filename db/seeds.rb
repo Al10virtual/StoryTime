@@ -46,7 +46,7 @@ puts "Created kids!"
 puts "Creating stories"
 
 Story.create!({
-    title: "Élodie et la Forêt Enchantée",
+    title: "La Forêt Perdue",
     theme: "Conte de fée",
     content: "Il était une fois une petite fille nommée Élodie, âgée de 5 ans, qui vivait dans un petit village entouré d'une vaste forêt. Élodie était une enfant curieuse et pleine d'imagination. Elle adorait explorer la nature et se perdre dans ses pensées. Un jour, alors qu'Élodie se promenait en bordure de la forêt, elle remarqua quelque chose d'extraordinaire. Les arbres semblaient plus grands et plus verts que d'habitude, et les oiseaux chantaient une mélodie magique. Intriguée, Élodie décida de s'aventurer plus profondément dans la forêt. À mesure qu'elle avançait, les arbres s'écartaient pour laisser place à un chemin lumineux et scintillant. Élodie poussa un petit cri de joie et commença à suivre ce chemin magique. Elle se sentait comme une princesse dans un conte de fées. Bientôt, Élodie arriva à une clairière où elle découvrit un groupe d'animaux enchantés en train de danser joyeusement. Il y avait des lapins qui sautaient gracieusement, des écureuils qui faisaient des pirouettes, et même des papillons qui volaient en formant de jolis motifs. Élodie se joignit à leur danse, riant et tournant avec eux. Après un moment, les animaux enchantés s'arrêtèrent pour remercier Élodie de les avoir rejoints. Ils lui expliquèrent que cette forêt était spéciale, qu'elle ne pouvait être trouvée que par ceux qui avaient un cœur pur et une grande imagination. Élodie se sentit très spéciale. Les animaux lui dirent aussi que la forêt avait besoin de son aide. Une étrange malédiction avait été jetée sur elle, et seuls les enfants comme Élodie pouvaient la briser. Élodie accepta courageusement cette mission et promit de faire de son mieux. Elle se mit en route avec ses nouveaux amis enchantés pour résoudre les énigmes et briser la malédiction. Ils traversèrent des rivières étincelantes, escaladèrent des montagnes enchantées, et résolurent des énigmes mystérieuses. Chaque étape de leur voyage était remplie d'aventures incroyables. Finalement, Élodie découvrit la source de la malédiction, un méchant sorcier qui vivait au cœur de la forêt. Avec l'aide de ses amis enchantés, elle réussit à convaincre le sorcier de retirer la malédiction. La forêt enchantée fut libérée de son sortilège, et Élodie reçut un cadeau spécial en retour : une petite étoile magique qui brillait dans sa main. Elle était maintenant la gardienne de la forêt enchantée. Élodie revint chez elle, mais elle ne cessa jamais de visiter la forêt enchantée avec son étoile magique. Elle partagea ses histoires avec les autres enfants du village, les invitant à la rejoindre dans ses aventures magiques. Et ainsi, grâce à la pureté de son cœur et à son imagination, Élodie vécut de merveilleuses aventures dans la forêt enchantée pour le reste de ses jours, enseignant aux autres enfants que la magie peut être trouvée partout, si vous y croyez vraiment.",
     kid_id: Kid.first.id,
@@ -79,7 +79,7 @@ Story.create!({
 puts "Story 2 created"
 
 Story.create!({
-    title: "Élodie et la Licorne Enchantée",
+    title: "La Licorne Enchantée",
     theme: "Mystère",
     content: "Il était une fois, dans un petit village au cœur d’une forêt enchantée, vivait un jeune garçon nommé Élodie.",
     kid_id: Kid.first.id,
@@ -91,68 +91,84 @@ puts "Story 3 created"
 
 puts "Creating questions..."
 
-question_one = Question.create!(
+question_teddy = Question.create!(
   title: "Quel est le prénom de son doudou ?",
   contextual: false
 )
 
-question_two = Question.create!(
-  title: "Quel est la date de naissance de #{Kid.last.first_name}?",
+question_date_of_birth = Question.create!(
+  title: "Quel est la date de naissance de votre enfant?",
   contextual: false
 )
 
-question_three = Question.create!(
-  title: "Quel est le prénom de son doudou ?",
+question_dish = Question.create!(
+  title: "Quel est le plat préféré de votre enfant ?",
   contextual: false
 )
 
-question_four = Question.create!(
-  title: "Quel est le prénom de son doudou ?",
+question_toy = Question.create!(
+  title: "Quel est le jouet préféré de votre enfant ?",
   contextual: false
 )
 
-question_five = Question.create!(
-  title: "Quel est le prénom de son doudou ?",
+question_favorite_pet = Question.create!(
+  title: "Quel animal préféré de votre enfant ?",
   contextual: false
 )
 
-question_six = Question.create!(
-  title: "Quel est le prénom de son doudou ?",
+question_book = Question.create!(
+  title: "Quel est le livre préféré de votre enfant ?",
   contextual: false
 )
 
-question_seven = Question.create!(
-  title: "Quel est le prénom de son doudou ?",
+question_song = Question.create!(
+  title: "Quelle est la chanson préférée de votre enfant ?",
   contextual: false
 )
 
-question_eight = Question.create!(
-  title: "Quel est le prénom de son doudou ?",
+question_pet = Question.create!(
+  title: "Est-ce que votre enfant a un animal de compagnie ? De quel animal s’agit-il et quel est son nom ?",
   contextual: false
 )
 
-question_nine = Question.create!(
-  title: "Quel est le prénom de son doudou ?",
+question_dad = Question.create!(
+  title: "Comment s’appelle le papa de votre enfant ?",
   contextual: false
 )
 
-question_ten = Question.create!(
-  title: "Quel est le prénom de son doudou ?",
+question_mum = Question.create!(
+  title: "Comment s’appelle la maman de votre enfant ?",
   contextual: false
 )
 
-question_eleven = Question.create!(
-  title: "Quel est le prénom de son doudou ?",
-  contextual: false
+question_magical_place = Question.create!(
+  title: "Quel genre d'endroits magiques ou fantastiques votre enfant aimerait visiter ?",
+  contextual: true
 )
+
+question_values = Question.create!(
+  title: "Quelles sont les valeurs importantes que vous souhaitez transmettre à travers cette histoire ?",
+  contextual: true
+)
+
+question_leson = Question.create!(
+  title: "Y a-t-il une leçon importante que vous voulez que votre enfant apprenne dans l'histoire ?",
+  contextual: true
+)
+
+question_fears = Question.create!(
+  title: "votre enfant a-t-il une peur ou une difficulté particulière à surmonter ?",
+  contextual: true
+)
+
 puts "Created questions!"
 
 puts "Creating answers..."
 
 Answer.create!(
   content: "Rexo",
-  kid: Kid.first,
-  question: question_one
+  kid: first_kid,
+  question: question_teddy
 )
 
 puts "Created answers!"
