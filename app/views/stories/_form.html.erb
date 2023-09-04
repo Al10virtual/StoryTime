@@ -1,13 +1,15 @@
 <%= simple_form_for [@kid, @story] do |f| %>
+  <div class="mb-2">
+Le thème de l'histoire
+  </div>
   <%= f.input :theme,
           as: :radio_buttons,
-          collection_wrapper_tag: 'div',
-          collection_wrapper_class: 'theme-wrapper',
-          item_wrapper_class: 'theme-item',
-          label_html: { class: 'fw-bold' },
-          input_html: { class: 'theme-selector' },
-          label: "Quel sera son thème ?",
-          collection: Story::THEMES %>
+          collection: Story::THEMES,
+          label: "",
+          wrapper_html: { class: 'story-theme-wrapper' },
+          input_html: { class: 'd-none story-theme-input' },
+          label_method: lambda {|theme| render("theme_radio_label", theme: theme)}
+ %>
   <%= f.input :lenght,
           as: :radio_buttons,
           label_html: { class: 'fw-bold' },
@@ -20,5 +22,5 @@
       <%= a.label @contextual_question.title %>
       <%= a.input :content, as: :text, label: false, placeholder: "Votre réponse" %>
     <% end %>
-  <%= f.submit "Valider", class: "custom-button w-100", data: { action: "story#toggleContent story#hideForm" } %>
+  <%= f.submit "Valider", class: "custom-button w-100" %>
 <% end %>

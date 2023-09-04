@@ -1,0 +1,42 @@
+<div class="my-container">
+  <div class="row justify-content-start align-items-center pt-3">
+    <div class="col-auto left-arrow">
+      <%= link_to kid_path(kid) do %>
+        <%= image_tag "icons/arrow-left.svg"%>
+      <% end %>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="card-story mb-4">
+        <div class="card-top" style="background-image: url('<%= story.image %>')"></div>
+        <div class="card-story-bottom">
+          <h4 class="card-title"><%= story.title %></h4>
+          <div class="justify-content-between">
+            <p><%= story.theme %> - durée <%= story.lenght %></p>
+            <div data-controller="read-more" data-read-more-more-text-value="Voir plus" data-read-more-less-text-value="Voir moins">
+              <p class="my-content" data-read-more-target="content">
+                <span class="my-content-first-letter"><%= story.content[0] %></span><%= story.content[1..-1] %>
+              </p>
+              <button class="custom-button w-100" data-action="read-more#toggle">Lire toute l'histoire</button>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div>
+        <div class="row justify-content-center align-items-center">
+          <div class="col-auto" data-controller="play" data-play-audio-file-value="<%= @story.audio.url.gsub(/\.mpga/, ".mp3") %>">
+            <div data-play-target="playBtn" data-action="click->play#go">
+              <%= image_tag "icons/play-circle.svg" %>
+            </div>
+            <div class="d-none" data-play-target="pauseBtn" data-action="click->play#pause">
+              <%= image_tag "icons/pause-circle.svg" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="padding: 100px">
+  </div>
+</div>

@@ -19,13 +19,13 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #FC7300;
+  background: #FFD6A5;
   transition: background 0.3s ease;
   margin-top: 10px;
 }
 
 .btn-flat:hover {
-  background: #FC7300;
+  background: $primary;
   color: white;
 }
 
@@ -70,7 +70,7 @@
 	height:60px;
 	bottom:100px;
 	right:40px;
-	background-color:#FC7300;
+	background-color: $primary;
 	color:#FFFF;
 	border-radius:50px;
 	text-align:center;
