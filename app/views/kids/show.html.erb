@@ -11,15 +11,33 @@
     <h1 class="text-center"><%= @kid.first_name %></h1>
     <h2 class="text-center mb-3"><%= @kid.age %> ans</h2>
     <h2>Son monde</h2>
-    <p><% @kid.answers.each do |answer| %>
-        <%= answer.content %>
+    <div class="d-flex w-100 flex-wrap">
+      <% if @kid.answers.empty?  %>
+    <p>Tout un monde à découvrir !</p>
+      <% else %>
+        <% @kid.answers.each do |answer| %>
+          <span class="badge rounded-pill text-white text-bg-secondary m-1 p-2"><%= answer.content.capitalize %>
+          <%= link_to answer_path(answer), data: { turbo_method: :delete } do %>
+            <%= image_tag "icons/x.svg" %>
+          <% end %>
+          </span>
+        <% end %>
       <% end %>
-    </p>
-    <h2>Ses <%= @kid.stories.count %> histoires</h2>
+     <%= link_to new_kid_answer_path(@kid) do %>
+      <span class="badge rounded-pill text-white text-bg-secondary m-1 p-2"><i class="fa fa-plus"></i></span>
+      <% end %>
+    </div>
+    <% if @kid.stories.count == 1 %>
+      <h2>Son histoire</h2>
+    <% elsif @kid.stories.count == 0 %>
+      <h2>N'a pas encore d'histoire !</h2>
+    <% else %>
+      <h2 class="mt-2">Ses <%= @kid.stories.count %> histoires</h2>
+    <% end %>
     <% @kid.stories.order(:id).reverse.each do |story| %>
       <%= link_to kid_story_path(@kid, story) do %>
         <div class ="card-story">
-          <div class="card-top" style="background-image: url('<%= story.image if story.image.present? %>')"></div>
+          <div class="card-top" style="background-image: url('<%= image_path story.story_cover_file_name %>')"></div>
           <div class="card-bottom">
             <div>
               <h6 class="card-title"><%= story.title.upcase %></h6>

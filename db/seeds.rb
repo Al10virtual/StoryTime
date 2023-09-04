@@ -10,7 +10,8 @@ first_user = User.create!(
   first_name: "Guillaume",
   last_name: "Planche",
   email: "first@gmail.com",
-  password: "azerty"
+  password: "azerty",
+  admin: true
 )
 
 puts "Created #{first_user.email}!"
@@ -52,7 +53,7 @@ Story.create!({
                 kid_id: first_kid.id,
                 lenght: 2,
                 duration: 200,
-                story_cover_file_name: "story1.jpg"
+                story_cover_file_name: "story1.png"
               })
 
 puts "Story 1 created!"
@@ -64,7 +65,7 @@ Story.create!({
                 kid_id: first_kid.id,
                 lenght: 1,
                 duration: 200,
-                story_cover_file_name: "story2.jpg"
+                story_cover_file_name: "story2.png"
               })
 
 puts "Story 2 created!"
@@ -76,7 +77,7 @@ Story.create!({
                 kid_id: first_kid.id,
                 lenght: 0,
                 duration: 200,
-                story_cover_file_name: "story3.jpg"
+                story_cover_file_name: "story3.png"
               })
 
 puts "Story 3 created!"
@@ -88,7 +89,7 @@ Story.create!({
                 kid_id: second_kid.id,
                 lenght: 0,
                 duration: 200,
-                story_cover_file_name: "story4.jpg"
+                story_cover_file_name: "story4.png"
               })
 
 puts "Story 4 created!"
