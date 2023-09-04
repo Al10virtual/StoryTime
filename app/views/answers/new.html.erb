@@ -1,0 +1,7 @@
+<div class="my-container">
+  <h1>Ajouter une information sur <%= @kid.first_name %></h1>
+  <h2><%= @question.title %></h2>
+  <div>
+    <%= render "form", kid: @kid, answer: @answer, class: 'd-block justify-content-center align-items-center' %>
+  </div>
+</div>
