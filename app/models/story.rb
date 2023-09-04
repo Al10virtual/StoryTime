@@ -13,8 +13,8 @@ class Story < ApplicationRecord
   private
 
   def audio_upload
-    try_text = "Il était une fois, dans un petit village au cœur d’une forêt enchantée, vivait un jeune garçon nommé Élodie."
-    base64mp3 = GoogleSpeechClient.new.get_sound(try_text)
+    #try_text = "Il était une fois, dans un petit village au cœur d’une forêt enchantée, vivait un jeune garçon nommé Élodie."
+    base64mp3 = GoogleSpeechClient.new.get_sound(content)
     file_name = I18n.transliterate(title).gsub(/[^0-9A-Za-z]/, '_').downcase
     save_path = Rails.root.join('public/speech', "#{file_name}.mp3")
     mp3_file = File.open(save_path, "wb") do |file|
