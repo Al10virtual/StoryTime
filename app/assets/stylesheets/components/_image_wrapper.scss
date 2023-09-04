@@ -1,0 +1,48 @@
+.story-theme-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1em;
+
+  legend {
+    display: none;
+  }
+}
+
+.story-theme-input + label {
+
+}
+
+.story-theme-input:checked + label {
+  .image-box {
+    border: 1px solid $sunset;
+  }
+
+}
+
+.image-box {
+  width: 85%;
+  box-sizing: border-box;
+  padding: 1%;
+  text-align: center; /* Pour centrer le texte du thème */
+}
+
+.image-wrapper {
+  width: 100%;
+}
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.image-caption {
+  /* Styles pour le texte du thème */
+}
+
+/* Clearfix pour le conteneur qui contient vos divs .image-box */
+.image-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
