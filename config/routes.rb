@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
+  require "sidekiq/web"
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   get :profile, to: 'families#show'
   # (If 1 kid, root to kids#show -> mais il faut penser à la gestion du compte parents)
   # get 'profile', to: 'pages#profile', as: 'profile'

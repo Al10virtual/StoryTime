@@ -22,5 +22,5 @@ Le thème de l'histoire
       <%= a.label @contextual_question.title %>
       <%= a.input :content, as: :text, label: false, placeholder: "Votre réponse" %>
     <% end %>
-  <%= f.submit "Valider", class: "custom-button w-100", data: { action: "story#toggleContent story#hideForm" } %>
+  <%= f.submit "Valider", class: "custom-button w-100" %>
 <% end %>
