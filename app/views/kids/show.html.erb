@@ -11,7 +11,7 @@
     <h1 class="text-center"><%= @kid.first_name %></h1>
     <h2 class="text-center mb-3"><%= @kid.age %> ans</h2>
     <h2>Son monde</h2>
-    <p><%= @kid.answers do |answer| %>
+    <p><% @kid.answers.each do |answer| %>
         <%= answer.content %>
       <% end %>
     </p>
