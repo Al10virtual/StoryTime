@@ -18,10 +18,13 @@ class GoogleSpeechClient
     data = JSON.dump({
       input: {
         "text": word
+        #POUR LES TEST DE VOIX "text": "Il était une fois, dans un petit village au cœur d’une forêt enchantée, vivait un jeune garçon nommé Élodie."
       },
       voice: {
         "languageCode": "fr-FR",
-        "name": "fr-FR-Neural2-D"
+        #"name": "fr-FR-Neural2-D"
+        "name": ["fr-FR-Wavenet-A", "fr-FR-Wavenet-B", "fr-FR-Wavenet-C", "fr-FR-Wavenet-D", "fr-FR-Wavenet-E"].sample
+
       },
       audioConfig: {
         "audioEncoding": "MP3",
