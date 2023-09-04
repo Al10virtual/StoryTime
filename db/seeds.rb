@@ -10,7 +10,8 @@ first_user = User.create!(
   first_name: "Guillaume",
   last_name: "Planche",
   email: "first@gmail.com",
-  password: "azerty"
+  password: "azerty",
+  admin: true
 )
 
 puts "Created #{first_user.email}!"

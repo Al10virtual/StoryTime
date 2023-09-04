@@ -1,0 +1,20 @@
+<div class="justify-content-start align-items-center pt-3">
+  <%= link_to kid_path(kid) do %>
+    <%= image_tag "icons/arrow-left.svg"%>
+  <% end %>
+
+  <div class="justify-content-start align-items-center pt-3">
+    <h1 class="text-center">La magie de StoryTime opère 🪄</h1>
+    <div class="p-3">
+      <ul>
+        <p class="fs-3 pt-5">✅ Analyse des passions de <%= kid.first_name %>...</p>
+      </ul>
+      <ul>
+        <p class="fs-3 pt-3">✅ Création de son histoire...</p>
+      </ul>
+      <ul>
+        <p class="fs-3 pt-3">✅ Encore un petit instant...</p>
+      </ul>
+    </div>
+  </div>
+</div>

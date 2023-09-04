@@ -9,7 +9,7 @@ class ChatGptService
             content: prompt
           }
         ],
-        temperature: 0.7
+        temperature: 0.9
      }).symbolize_keys
     json_response = response.dig(:choices).first.dig("message", "content").gsub("\n", ' ')
   end

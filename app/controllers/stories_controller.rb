@@ -12,10 +12,9 @@ class StoriesController < ApplicationController
                        lenght: story_params[:lenght].to_i)
     @story.kid = @kid
     @contextual_question = Question.find(params.dig(:story, :answer, :question_id))
-    @answer = Answer.new(content: params.dig(:story, :answer, :content), kid: @kid, question: @contextual_question)
-    generate_story_content(@story)
-    generate_story_image(@story)
+    @answer = Answer.create(content: params.dig(:story, :answer, :content), kid: @kid, question: @contextual_question)
     if @story.save
+      GenerateStoryContentJob.perform_later(@story, @answer)
       redirect_to kid_story_path(@kid, @story)
     else
       render :new
@@ -34,26 +33,5 @@ class StoriesController < ApplicationController
 
   def story_params
     params.require(:story).permit(:theme, :lenght)
-  end
-
-  def calculate_age(date_of_birth)
-    today = Date.today
-    age = today.year - date_of_birth.year
-    age -= 1 if today < date_of_birth + age.years
-    age
-  end
-
-  def generate_story_content(story)
-    story.prompt = "Agis comme un auteur pour enfants à succès. Ecris une histoire de #{story.lenght} durée de type #{story.theme} pour #{@kid.first_name}. Adapte l'histoire à son age (#{calculate_age(@kid.date_of_birth)} ans). De plus, ajoute dans l'histoire le context suivant: à la question suivante, #{@contextual_question.title}, les parents de #{@kid.first_name} ont répondu #{@answer.content}. Donne-moi un JSON avec en clé title, le titre de cette histoire et une clé content avec le contenu de l’histoire."
-    chat_gpt_response = JSON.parse(ChatGptService.generate_story(story.prompt))
-    story.content = chat_gpt_response["content"]
-    story.title = chat_gpt_response["title"]
-  end
-
-  def generate_story_image(story)
-    story.image_prompt = "Crée une illustration fantastique pour enfants sans texte sur le thème suivant: #{story.title}."
-    image_size = "512x512"
-    response = ChatGptService.generate_image(story.image_prompt, image_size)
-    story.image = response
   end
 end

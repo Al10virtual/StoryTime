@@ -17,6 +17,8 @@ module StoryTime
     config.load_defaults 7.0
 
     config.i18n.default_locale = 'fr'
+
+    config.active_job.queue_adapter = :sidekiq
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
