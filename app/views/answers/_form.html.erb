@@ -1,0 +1,4 @@
+<%= simple_form_for [@kid, @answer] do |f| %>
+  <%= f.input :content, label: "Votre réponse" %>
+  <%= f.button :submit, class: "btn btn-flat", value: "Valider" %>
+<% end %>

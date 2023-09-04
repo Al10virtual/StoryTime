@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :kids, except: :index do
     resources :stories, except: %i[edit update]
+    resources :answers, only: %i[new create]
     # resources :environments
     # éventuellemment except index, si toutes les stories sont dans la show du kid
   end
@@ -26,4 +27,6 @@ Rails.application.routes.draw do
     resources :kids, only: %i[new create]
     resources :user_families, only: %i[new create]
   end
+
+  resources :answers, only: :destroy
 end

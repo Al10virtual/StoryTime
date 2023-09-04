@@ -118,6 +118,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.11.0)
+      devise (>= 4.9.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.8.1)
@@ -266,6 +268,9 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails-i18n (7.0.8)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 8)
     railties (7.0.7.2)
       actionpack (= 7.0.7.2)
       activesupport (= 7.0.7.2)
@@ -396,6 +401,7 @@ DEPENDENCIES
   cloudinary
   debug
   devise
+  devise-i18n
   dotenv-rails
   font-awesome-sass (~> 6.1)
   google-api-client
@@ -407,6 +413,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.7)
   redis (~> 4.0)
+  rails-i18n
   rubocop
   ruby-openai
   sassc-rails
