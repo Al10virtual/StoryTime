@@ -5,21 +5,26 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="play"
 
 export default class extends Controller {
+  static targets = ['playBtn', 'pauseBtn']
+
   static values = {
     audioFile: String
   }
 
   connect() {
-    console.log(this.audioFileValue);
+    console.log(audio.url)
   }
 
   go() {
-    var audio = new Audio('/speech/elodie.mp3');
-    var audio = new Audio(this.audioFileValue);
-    audio.play();
-    this.element.setAttribute("disabled", "");
+    this.audio = new Audio(this.audioFileValue);
+    this.audio.play();
+    this.playBtnTarget.classList.add('d-none');
+    this.pauseBtnTarget.classList.remove('d-none');
   }
-  stop() {
-    audio.stop();
+
+  pause() {
+    this.audio.pause();
+    this.playBtnTarget.classList.remove('d-none');
+    this.pauseBtnTarget.classList.add('d-none');
   }
 }
