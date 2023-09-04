@@ -13,4 +13,11 @@ class ChatGptService
      }).symbolize_keys
     json_response = response.dig(:choices).first.dig("message", "content").gsub("\n", ' ')
   end
+
+  def self.generate_image(image_prompt, image_size)
+    response = OpenAI::Client.new(access_token: ENV.fetch('GPT_KEY')).images.generate(
+      parameters: { prompt: image_prompt, size: image_size }
+    )
+    response.dig("data", 0, "url")
+  end
 end

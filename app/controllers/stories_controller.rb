@@ -10,12 +10,11 @@ class StoriesController < ApplicationController
   def create
     @story = Story.new(theme: story_params[:theme],
                        lenght: story_params[:lenght].to_i)
-    # récupérer titre theme et lenght de l'histoire
-
     @story.kid = @kid
     @contextual_question = Question.find(params.dig(:story, :answer, :question_id))
     @answer = Answer.new(content: params.dig(:story, :answer, :content), kid: @kid, question: @contextual_question)
     generate_story_content(@story)
+    generate_story_image(@story)
     if @story.save
       redirect_to kid_story_path(@kid, @story)
     else
@@ -49,5 +48,12 @@ class StoriesController < ApplicationController
     chat_gpt_response = JSON.parse(ChatGptService.generate_story(story.prompt))
     story.content = chat_gpt_response["content"]
     story.title = chat_gpt_response["title"]
+  end
+
+  def generate_story_image(story)
+    story.image_prompt = "Crée une illustration fantastique pour enfants sans texte sur le thème suivant: #{story.title}."
+    image_size = "512x512"
+    response = ChatGptService.generate_image(story.image_prompt, image_size)
+    story.image = response
   end
 end

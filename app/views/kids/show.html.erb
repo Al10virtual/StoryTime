@@ -16,10 +16,10 @@
       <% end %>
     </p>
     <h2>Ses <%= @kid.stories.count %> histoires</h2>
-    <% @kid.stories.each do |story| %>
+    <% @kid.stories.order(:id).reverse.each do |story| %>
       <%= link_to kid_story_path(@kid, story) do %>
         <div class ="card-story">
-          <div class="card-top" style="background-image: url('<%= image_path 'banner2.jpg' %>')"></div>
+          <div class="card-top" style="background-image: url('<%= story.image if story.image.present? %>')"></div>
           <div class="card-bottom">
             <div>
               <h6 class="card-title"><%= story.title.upcase %></h6>

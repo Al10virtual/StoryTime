@@ -4,14 +4,16 @@
           collection_wrapper_tag: 'div',
           collection_wrapper_class: 'theme-wrapper',
           item_wrapper_class: 'theme-item',
+          label_html: { class: 'fw-bold' },
           input_html: { class: 'theme-selector' },
           label: "Quel sera son thème ?",
           collection: Story::THEMES %>
   <%= f.input :lenght,
           as: :radio_buttons,
+          label_html: { class: 'fw-bold' },
           input_html: { class: "tag-selector" },
           item_wrapper_class: 'tag-item',
-          label: "Quel sera sa durée ?",
+          label: "Quelle sera sa durée ?",
           collection: Story.lenghts %>
   <%= f.simple_fields_for :answer, @answer do |a| %>
       <%= a.association :question, as: :hidden %>
