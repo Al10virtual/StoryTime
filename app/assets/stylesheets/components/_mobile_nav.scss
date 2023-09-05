@@ -1,5 +1,5 @@
 .mobile-nav {
-  background: #BFFCC6;
+  background: $pink-soft;
   position: fixed;
   bottom: 0;
   height: 83px;
@@ -12,7 +12,7 @@
 
 .mobile-nav a {
   text-decoration: none;
-  color: #FFD6A5;
+  color: $black;
 }
 
 .bloc-icon img {
