@@ -20,6 +20,18 @@ class KidsController < ApplicationController
     end
   end
 
+  def destroy
+    @kid = Kid.find(params[:id])
+    @family = @kid.family
+
+    if @kid.destroy
+      flash[:notice] = "Le compte de votre enfant a bien été supprimé !"
+      redirect_to family_path(@family)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def kid_params
