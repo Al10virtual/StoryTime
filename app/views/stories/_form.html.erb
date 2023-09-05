@@ -1,27 +1,32 @@
 <%= simple_form_for [@kid, @story] do |f| %>
-  <div class="mb-2">
-Le thème de l'histoire
+  <div data-target="split-form.part1">
+    <div class="mb-2">
+      Le thème de l'histoire
+    </div>
+    <%= f.input :theme,
+            as: :radio_buttons,
+            collection: Story::THEMES,
+            label: "",
+            wrapper_html: { class: 'story-theme-wrapper' },
+            input_html: { class: 'd-none story-theme-input' },
+            label_method: lambda {|theme| render("theme_radio_label", theme: theme)}
+    %>
+    <button type="button" data-action="split-form#next">Suivant</button>
   </div>
-  <%= f.input :theme,
-          as: :radio_buttons,
-          collection: Story::THEMES,
-          label: "",
-          wrapper_html: { class: 'story-theme-wrapper' },
-          input_html: { class: 'd-none story-theme-input' },
-          label_method: lambda {|theme| render("theme_radio_label", theme: theme)}
- %>
- Next
-  <%= f.input :lenght,
-          as: :radio_buttons,
-          label_html: { class: 'fw-bold' },
-          input_html: { class: "tag-selector" },
-          item_wrapper_class: 'tag-item',
-          label: "Quelle sera sa durée ?",
-          collection: Story.lenghts %>
-  <%= f.simple_fields_for :answer, @answer do |a| %>
-      <%= a.association :question, as: :hidden %>
-      <%= a.label @contextual_question.title %>
-      <%= a.input :content, as: :text, label: false, placeholder: "Votre réponse" %>
-    <% end %>
-  <%= f.submit "Valider", class: "custom-button w-100" %>
+
+  <div data-target="split-form.part2" style="display: none;">
+    <%= f.input :length,
+            as: :radio_buttons,
+            label_html: { class: 'fw-bold' },
+            input_html: { class: "tag-selector" },
+            item_wrapper_class: 'tag-item',
+            label: "Quelle sera sa durée ?",
+            collection: Story.lengths %>
+    <%= f.simple_fields_for :answer, @answer do |a| %>
+        <%= a.association :question, as: :hidden %>
+        <%= a.label @contextual_question.title %>
+        <%= a.input :content, as: :text, label: false, placeholder: "Votre réponse" %>
+      <% end %>
+    <%= f.submit "Valider", class: "custom-button w-100" %>
+  </div>
 <% end %>
