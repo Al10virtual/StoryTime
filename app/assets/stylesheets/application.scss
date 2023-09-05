@@ -2,32 +2,25 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
-
 // External libraries
 @import "bootstrap";
 @import "font-awesome";
-
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 
-
 h1 {
   font-size: 4rem;
 }
-
 h2 {
   font-size: 2.5rem;
 }
-
 h4 {
   font-size: 3rem;
 }
-
 h6 {
   font-size: 1.5rem;
 }
-
 label {
   font-weight: bold;
 }

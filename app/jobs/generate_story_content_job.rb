@@ -9,8 +9,10 @@ class GenerateStoryContentJob < ApplicationJob
     story.content = chat_gpt_response["content"]
     story.title = chat_gpt_response["title"]
     story.save
+
     GenerateStoryAudioJob.perform_now(story)
     GenerateStoryImageJob.perform_now(story)
+
     broadcast(story)
   end
 
