@@ -57,7 +57,7 @@ gem "sassc-rails"
 
 gem 'ruby-openai'
 
-gem "sidekiq"
+gem "sidekiq", "~> 6.5.8"
 gem "sidekiq-failures", "~> 1.0"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
