@@ -1,6 +1,6 @@
 // Graphical variables
-@import "config/fonts";
 @import "config/colors";
+@import "config/fonts";
 @import "config/bootstrap_variables";
 
 // External libraries
@@ -12,20 +12,33 @@
 @import "pages/index";
 
 
+
+body {
+  background: #005C97;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #363795, #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: $grey-pearl;
+}
+
 h1 {
   font-size: 4rem;
+  color: $gold-stars;
 }
 
 h2 {
   font-size: 2.5rem;
+  color: $gold-stars;
 }
 
 h4 {
   font-size: 3rem;
+  color: $gold-stars;
 }
 
 h6 {
   font-size: 1.5rem;
+  color: $gold-stars;
 }
 
 label {
