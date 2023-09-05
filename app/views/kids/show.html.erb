@@ -56,7 +56,7 @@
     <% end %>
   </div>
   <div class="text-center">
-    <%= link_to kid_path(@kid), data: {turbo_method: :delete} do %>
+    <%= link_to kid_path(@kid), data: { turbo_method: :delete, turbo_confirm: 'Êtes-vous sûr de vouloir supprimer le profil de cet enfant ?'} do %>
       <%= image_tag "icons/trash.svg"%>
     <% end %>
   </div>
