@@ -6,8 +6,8 @@
       <% end %>
     </div>
     <h1><%= @kid.first_name %></h1>
-    <h2><%= @question.title %></h2>
-    <div>
+    <h2 class="mt-5"><%= @question.title %></h2>
+    <div class="mt-5">
       <%= render "form", kid: @kid, answer: @answer, class: 'd-block justify-content-center align-items-center' %>
     </div>
   </div>

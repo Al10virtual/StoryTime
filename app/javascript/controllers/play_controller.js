@@ -10,7 +10,7 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log(audio.url)
+    console.log('Play controller connected')
   }
 
   go() {
