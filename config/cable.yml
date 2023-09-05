@@ -1,5 +1,5 @@
 development:
-  adapter: redis
+  adapter: redis3.20
   #ici c'est redis qu'il faut installer, pas autre chose comme indqiué dans le cours qui n'est pas à jour!
 
 test:
