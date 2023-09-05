@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root to: "pages#home"
+  root to: "families#show"
 
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   end
 
   resources :families, except: %i[index edit update] do
-    resources :kids, only: %i[new create]
+    resources :kids, only: %i[new create destroy]
     resources :user_families, only: %i[new create]
   end
 

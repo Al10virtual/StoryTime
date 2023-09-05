@@ -6,25 +6,31 @@
       <% end %>
     </div>
     <div>
-      <%= image_tag(@kid.avatar_file_name, class:'avatar-large d-block mx-auto') %>
+      <% if @kid.photo.key.present? %>
+        <%= cl_image_tag @kid.photo.key, class: 'avatar-large d-block mx-auto' %>
+      <% else %>
+        <%= image_tag(@kid.avatar_file_name, class:'avatar-large d-block mx-auto') %>
+      <% end %>
     </div>
     <h1 class="text-center"><%= @kid.first_name %></h1>
     <h2 class="text-center mb-3"><%= @kid.age %> ans</h2>
     <h2>Son monde</h2>
     <div class="d-flex w-100 flex-wrap">
       <% if @kid.answers.empty?  %>
-    <p>Tout un monde à découvrir !</p>
+        <p>Compléter le monde de <%= @kid.first_name %> en cliquant sur +</p>
       <% else %>
         <% @kid.answers.each do |answer| %>
-          <span class="badge rounded-pill text-white text-bg-secondary m-1 p-2"><%= answer.content.capitalize %>
-          <%= link_to answer_path(answer), data: { turbo_method: :delete } do %>
-            <%= image_tag "icons/x.svg" %>
-          <% end %>
+          <span class="badge st-badge rounded-pill text-white text-bg-secondary m-1 p-2"><%= answer.content.capitalize %>
+            <%= link_to answer_path(answer), data: { turbo_method: :delete } do %>
+              <%= image_tag "icons/x.svg" %>
+            <% end %>
           </span>
         <% end %>
       <% end %>
-     <%= link_to new_kid_answer_path(@kid) do %>
-      <span class="badge rounded-pill text-white text-bg-secondary m-1 p-2"><i class="fa fa-plus"></i></span>
+      <%= link_to new_kid_answer_path(@kid), class: "align-items-center" do %>
+        <span class="badge st-badge-plus rounded-pill text-white text-bg-secondary m-1 p-2">
+          <i class="fa fa-plus"></i>
+        </span>
       <% end %>
     </div>
     <% if @kid.stories.count == 1 %>
@@ -37,7 +43,7 @@
     <% @kid.stories.order(:id).reverse.each do |story| %>
       <%= link_to kid_story_path(@kid, story) do %>
         <div class ="card-story">
-          <div class="card-top" style="background-image: url('<%= image_path story.story_cover_file_name %>')"></div>
+          <div class="card-top" style="background-image: url(<%= story.image.key.present? ? cl_image_path(story.image.key) : image_path(story.story_cover_file_name) %>)"></div>
           <div class="card-bottom">
             <div>
               <h6 class="card-title"><%= story.title.upcase %></h6>
@@ -48,12 +54,12 @@
         </div>
       <% end %>
     <% end %>
-    <a href="#" class="float">
-      <%= link_to new_kid_story_path(@kid), class:"float" do %>
-        <i class="fa fa-plus my-float"></i>
-      <% end %>
-    </a>
-    <div style="padding: 100px">
-    </div>
+  </div>
+  <div class="text-center">
+    <%= link_to kid_path(@kid), data: { turbo_method: :delete, turbo_confirm: 'Êtes-vous sûr de vouloir supprimer le profil de cet enfant ?'} do %>
+      <%= image_tag "icons/trash.svg"%>
+    <% end %>
+  </div>
+  <div style="padding: 100px">
   </div>
 </div>

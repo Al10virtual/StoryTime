@@ -3,6 +3,7 @@ class Story < ApplicationRecord
 
   belongs_to :kid
   has_one_attached :audio
+  has_one_attached :image
   enum :lenght, {
     courte: 0,
     moyenne: 1,
