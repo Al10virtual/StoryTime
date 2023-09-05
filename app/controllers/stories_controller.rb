@@ -9,7 +9,7 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(theme: story_params[:theme],
-                       lenght: story_params[:lenght].to_i)
+                       lenght: story_params[:lenght].to_i - 1)
     @story.kid = @kid
     @contextual_question = Question.find(params.dig(:story, :answer, :question_id))
     @answer = Answer.create(content: params.dig(:story, :answer, :content), kid: @kid, question: @contextual_question)
