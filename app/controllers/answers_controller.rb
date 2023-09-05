@@ -19,11 +19,11 @@ class AnswersController < ApplicationController
   end
 
   def destroy
-    # @kid = Kid.find(params[:kid_id])
     @answer = Answer.find(params[:id])
+
     if @answer.destroy
-      flash[:success] = "Réponse bien supprimée !"
-      # redirect_to kid_path(@kid)
+      flash[:notice] = "Réponse bien supprimée !"
+      redirect_to kid_path(@answer.kid)
     else
       render :new, status: :unprocessable_entity
     end

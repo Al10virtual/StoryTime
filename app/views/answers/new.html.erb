@@ -1,7 +1,14 @@
 <div class="my-container">
-  <h1>Ajouter une information sur <%= @kid.first_name %></h1>
-  <h2><%= @question.title %></h2>
-  <div>
-    <%= render "form", kid: @kid, answer: @answer, class: 'd-block justify-content-center align-items-center' %>
+  <div class="row justify-content-start align-items-center pt-3">
+    <div class="col-auto left-arrow">
+      <%= link_to kid_path(@kid) do %>
+        <%= image_tag "icons/arrow-left.svg"%>
+      <% end %>
+    </div>
+    <h1><%= @kid.first_name %></h1>
+    <h2><%= @question.title %></h2>
+    <div>
+      <%= render "form", kid: @kid, answer: @answer, class: 'd-block justify-content-center align-items-center' %>
+    </div>
   </div>
 </div>
