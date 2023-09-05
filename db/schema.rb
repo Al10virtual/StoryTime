@@ -87,9 +87,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_105744) do
     t.text "prompt"
     t.integer "lenght"
     t.integer "duration"
-    t.string "story_cover_file_name"
     t.string "image_prompt"
     t.text "image"
+    t.string "story_cover_file_name"
     t.index ["kid_id"], name: "index_stories_on_kid_id"
   end
 

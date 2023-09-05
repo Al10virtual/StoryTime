@@ -9,7 +9,7 @@
   <div class="row mt-5">
     <div class="col-12">
       <div class="card-story mb-4">
-        <div class="card-top" style="background-image: url('<%= story.image %>')"></div>
+        <div class="card-top" style="background-image: url('<%= cl_image_path story.image.key %>')"></div>
         <div class="card-story-bottom">
           <h4 class="card-title"><%= story.title %></h4>
           <div class="justify-content-between">
