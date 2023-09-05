@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_05_121814) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_05_135408) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -80,7 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_121814) do
   create_table "stories", force: :cascade do |t|
     t.string "title"
     t.string "theme"
-    t.string "content"
+    t.text "content"
     t.bigint "kid_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -88,8 +88,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_121814) do
     t.integer "lenght"
     t.integer "duration"
     t.string "image_prompt"
-    t.text "image"
-    t.string "story_cover_file_name"
+    t.string "cover_file_name"
     t.string "audio_file_name"
     t.index ["kid_id"], name: "index_stories_on_kid_id"
   end

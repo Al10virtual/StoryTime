@@ -53,7 +53,7 @@ Story.create!({
                 kid_id: first_kid.id,
                 lenght: 2,
                 duration: 200,
-                story_cover_file_name: "story1.png",
+                cover_file_name: "story1.png",
                 audio_file_name: "public/speech/la_foret_perdue.mp3"
               })
 
@@ -66,7 +66,7 @@ Story.create!({
                 kid_id: first_kid.id,
                 lenght: 1,
                 duration: 200,
-                story_cover_file_name: "story2.png",
+                cover_file_name: "story2.png",
                 audio_file_name: "public/speech/la_licorne_enchantee.mp3"
               })
 
@@ -79,7 +79,7 @@ Story.create!({
                 kid_id: first_kid.id,
                 lenght: 0,
                 duration: 200,
-                story_cover_file_name: "story3.png",
+                cover_file_name: "story3.png",
                 audio_file_name: "public/speech/le_doudou_magique.mp3"
               })
 
@@ -92,7 +92,7 @@ Story.create!({
                 kid_id: second_kid.id,
                 lenght: 0,
                 duration: 200,
-                story_cover_file_name: "story4.png",
+                cover_file_name: "story4.png",
                 audio_file_name: "public/speech/paolo_et_le_tresor_de_tortuga.mp3"
               })
 
