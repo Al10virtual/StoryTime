@@ -1,6 +1,13 @@
 <div class="my-container">
-  <h1>Ajouter un enfant à <%= @family.name %></h1>
-  <div>
-    <%= render "form", kid: @kid, class: 'd-block justify-content-center align-items-center' %>
+  <div class="row justify-content-start align-items-center pt-3">
+    <div class="col-auto left-arrow">
+      <%= link_to family_path(current_user.families) do %>
+        <%= image_tag "icons/arrow-left.svg"%>
+      <% end %>
+    </div>
+    <h1>Ajouter un enfant à la Famille <%= @family.name %></h1>
+    <div>
+      <%= render "form", kid: @kid, family: @family %>
+    </div>
   </div>
 </div>

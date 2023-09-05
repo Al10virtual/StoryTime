@@ -6,18 +6,19 @@
     <% if @kids.empty?  %>
       <p>Ajoutez un enfant avec le bouton + !</p>
     <% else %>
-      <% @kids.each do |kid| %>
+      <% @kids.order(:id).reverse.each do |kid| %>
         <%= link_to kid_path(kid), class:'card-kid' do %>
-          <%= image_tag(kid.avatar_file_name, class:'avatar-large mx-auto') %>
+          <% if kid.photo.key.present? %>
+            <%= cl_image_tag kid.photo.key, class: 'avatar-large mx-auto' %>
+          <% else %>
+            <%= image_tag(kid.avatar_file_name, class:'avatar-large mx-auto') %>
+          <% end %>
           <h2 class="text-center"><%= kid.first_name %></h2>
         <% end %>
       <% end %>
-      <%= link_to new_family_kid_path(@family), class:"float" do %>
-        <i class="fa fa-plus my-float"></i>
-      <% end %>
     <% end %>
-    </div>
   </div>
-  <div class="text-center font-italic" style="padding-top: 22rem !important">
-    <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, style:"valign: bottom" %>
+  <div class="text-center font-italic" style="padding-top: 20rem !important">
+    <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, style:"color: $gray" %>
   </div>
+</div>
