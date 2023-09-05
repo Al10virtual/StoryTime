@@ -13,13 +13,19 @@
         <div class="card-story-bottom">
           <h4 class="card-title"><%= story.title %></h4>
           <div class="justify-content-between">
-            <p><%= story.theme %> - durée <%= story.lenght %></p>
-            <div data-controller="read-more" data-mdb-toggle="modal" data-mdb-target="#readModal">
-              <p class="my-content">
-                <span class="my-content-first-letter"><%= story.content[0] %></span><%= story.content[1..-1] %>
-              </p>
-              <button class="custom-button w-100" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Voir l'histoire</button>
+            <div class="d-flex">
+              <span class="badge st-badge rounded-pill text-white text-bg-secondary m-1 p-2">
+                <%= story.theme %>
+              </span>
+              <span class="badge st-badge rounded-pill text-white text-bg-secondary m-1 p-2">
+                Durée <%= story.lenght %>
+              </span>
             </div>
+            <p class="my-content">
+              <span class="first-letter"><%= story.content[0] %></span><%= story.content[1..-1] %>
+            </p>
+            <button class="custom-button w-100" data-bs-toggle="modal" data-bs-target="#readingModal">Voir l'histoire</button>
+            <%= render "reading_story_modal", story: story %>
           </div>
         </div>
       </div>

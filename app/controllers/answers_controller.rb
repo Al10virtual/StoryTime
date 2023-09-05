@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
   def new
-    @question = Question.first
+    @question = Question.where(contextual: false).sample
     @answer = Answer.new
     @kid = Kid.find(params[:kid_id])
   end

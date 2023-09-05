@@ -54,7 +54,7 @@ Story.create!({
                 lenght: 2,
                 duration: 200,
                 cover_file_name: "story1.png",
-                audio_file_name: "public/speech/la_foret_perdue.mp3"
+                audio_file_name: "speech/la_foret_perdue.mp3"
               })
 
 puts "Story 1 created!"
@@ -67,7 +67,7 @@ Story.create!({
                 lenght: 1,
                 duration: 200,
                 cover_file_name: "story2.png",
-                audio_file_name: "public/speech/la_licorne_enchantee.mp3"
+                audio_file_name: "speech/la_licorne_enchantee.mp3"
               })
 
 puts "Story 2 created!"
@@ -80,7 +80,7 @@ Story.create!({
                 lenght: 0,
                 duration: 200,
                 cover_file_name: "story3.png",
-                audio_file_name: "public/speech/le_doudou_magique.mp3"
+                audio_file_name: "speech/le_doudou_magique.mp3"
               })
 
 puts "Story 3 created!"
@@ -93,7 +93,7 @@ Story.create!({
                 lenght: 0,
                 duration: 200,
                 cover_file_name: "story4.png",
-                audio_file_name: "public/speech/paolo_et_le_tresor_de_tortuga.mp3"
+                audio_file_name: "speech/paolo_et_le_tresor_de_tortuga.mp3"
               })
 
 puts "Story 4 created!"
@@ -203,18 +203,6 @@ Answer.create!(
 )
 
 Answer.create!(
-  content: "L'école de Léon",
-  kid: Kid.first,
-  question: question5
-)
-
-Answer.create!(
-  content: "Dua Lipa - Dance The Night",
-  kid: Kid.first,
-  question: question6
-)
-
-Answer.create!(
   content: "Le chat Croquette",
   kid: Kid.first,
   question: question7
@@ -232,41 +220,35 @@ Answer.create!(
   question: question9
 )
 
-Answer.create!(
-  content: "Le vert",
-  kid: Kid.first,
-  question: question10
-)
-
 puts "Creating answers for #{second_kid.first_name}..."
 
 Answer.create!(
   content: "Archibald - Après la pluie",
-  kid: Kid.first,
+  kid: Kid.second,
   question: question5
 )
 
 Answer.create!(
   content: "Marie",
-  kid: Kid.first,
+  kid: Kid.second,
   question: question9
 )
 
 Answer.create!(
   content: "Les canards",
-  kid: Kid.first,
+  kid: Kid.second,
   question: question4
 )
 
 Answer.create!(
   content: "Les pizzas",
-  kid: Kid.first,
+  kid: Kid.second,
   question: question2
 )
 
 Answer.create!(
   content: "Sa voiture Flash McQueen",
-  kid: Kid.first,
+  kid: Kid.second,
   question: question3
 )
 

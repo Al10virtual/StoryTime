@@ -19,7 +19,7 @@
       <% if @kid.answers.empty?  %>
         <p>Compléter le monde de <%= @kid.first_name %> en cliquant sur +</p>
       <% else %>
-        <% @kid.answers.each do |answer| %>
+        <% @kid.answers.order(:id).reverse.each do |answer| %>
           <span class="badge st-badge rounded-pill text-white text-bg-secondary m-1 p-2"><%= answer.content.capitalize %>
             <%= link_to answer_path(answer), data: { turbo_method: :delete } do %>
               <%= image_tag "icons/x.svg" %>
@@ -34,11 +34,11 @@
       <% end %>
     </div>
     <% if @kid.stories.count == 1 %>
-      <h2>Son histoire</h2>
+      <h2 class="mt-3">Son histoire</h2>
     <% elsif @kid.stories.count == 0 %>
       <h2>N'a pas encore d'histoire !</h2>
     <% else %>
-      <h2 class="mt-2">Ses <%= @kid.stories.count %> histoires</h2>
+      <h2 class="mt-3">Ses <%= @kid.stories.count %> histoires</h2>
     <% end %>
     <% @kid.stories.order(:id).reverse.each do |story| %>
       <%= link_to kid_story_path(@kid, story) do %>
