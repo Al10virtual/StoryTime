@@ -4,7 +4,9 @@ class GenerateStoryContentJob < ApplicationJob
 
   def perform(story, answer)
     @kid = story.kid
-    story.prompt = "Agis comme un auteur pour enfants à succès. Ecris une histoire de #{story.lenght} durée de type #{story.theme} pour #{@kid.first_name}. Adapte l'histoire à son age (#{calculate_age(@kid.date_of_birth)} ans). De plus, ajoute dans l'histoire le context suivant: à la question suivante, #{answer.question.title}, les parents de #{@kid.first_name} ont répondu #{answer.content}. Donne-moi un JSON avec en clé title, le titre de cette histoire et une clé content avec le contenu de l’histoire."
+    non_contextual_answer = Answer.joins(:question).where(questions: { contextual: false }).sample
+    additional_context = non_contextual_answer ? "Aussi, à la question #{non_contextual_answer.question.title}, la réponse était #{non_contextual_answer.content}." : ""
+    story.prompt = "Agis comme un auteur pour enfants à succès. Ecris une histoire de #{story.lenght} durée de type #{story.theme} pour #{@kid.first_name}. Adapte l'histoire à son age (#{calculate_age(@kid.date_of_birth)} ans). De plus, ajoute dans l'histoire le context suivant: à la question suivante, #{answer.question.title}, les parents de #{@kid.first_name} ont répondu #{answer.content}. #{additional_context} Donne-moi un JSON avec en clé title, le titre de cette histoire et une clé content avec le contenu de l’histoire."
     chat_gpt_response = JSON.parse(ChatGptService.generate_story(story.prompt))
     story.content = chat_gpt_response["content"]
     story.title = chat_gpt_response["title"]
