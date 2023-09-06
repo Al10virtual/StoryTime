@@ -11,5 +11,13 @@ class GenerateStoryImageJob < ApplicationJob
     file = URI.open(image_url)
     story.image.attach(io: file, filename: "story_#{story.id}.png", content_type: "image/png")
     story.save
+    broadcast(story)
+  end
+
+  def broadcast(story)
+    StoryChannel.broadcast_to(story, {
+      step: "image",
+      html: ApplicationController.renderer.render_to_string(partial: 'stories/loaded_story', locals: { story: story, kid: story.kid }, formats: :html)
+    })
   end
 end

@@ -1,15 +1,9 @@
-<div
-  data-controller="story-subscription"
-  data-story-subscription-story-id-value="<%= @story.id %>"
-  data-story-subscription-target="story">
+<% if @story.title.present? %>
 
-  <% if @story.title.present? %>
+  <%= render "stories/loaded_story", kid: @kid, story: @story %>
 
-    <%= render "loaded_story", kid: @kid, story: @story %>
+<% else %>
 
-  <% else %>
+  <%= render "stories/pending_story", kid: @kid %>
 
-    <%= render "pending_story", kid: @kid %>
-
-  <% end %>
-</div>
+<% end %>

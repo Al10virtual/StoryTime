@@ -1,6 +1,8 @@
 class GenerateStoryContentJob < ApplicationJob
   sidekiq_options retry: 0
   queue_as :default
+  include ActionView::Helpers
+  include Rails.application.routes.url_helpers
 
   def perform(story, answer)
     @kid = story.kid
@@ -11,6 +13,9 @@ class GenerateStoryContentJob < ApplicationJob
     story.content = chat_gpt_response["content"]
     story.title = chat_gpt_response["title"]
     story.save
+
+    StoryChannel.broadcast_to(story, { step: "text" })
+
 
     GenerateStoryAudioJob.perform_now(story)
     GenerateStoryImageJob.perform_now(story)
