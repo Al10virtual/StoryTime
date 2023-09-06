@@ -1,23 +1,29 @@
 <%= simple_form_for [@kid, @story], data: { controller: "split-form" } do |f| %>
   <div data-target="split-form.section" class="form-section active">
+    <div class="col-auto left-arrow">
+      <%= link_to kid_path(kid) do %>
+        <%= image_tag "icons/arrow-left.svg"%>
+      <% end %>
+    </div>
     <%= f.input :theme,
             as: :radio_buttons,
             collection: Story::THEMES,
             label: "Le thème de l'histoire",
+            label_html: { style: 'font-size: 2.5rem' },
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'story-theme-wrapper',
             input_html: { class: 'd-none story-theme-input' },
             label_method: lambda {|theme| render("theme_radio_label", theme: theme)}
     %>
-    <button type="button" data-action="split-form#next" class="btn btn-primary next-button">Suivant</button>
-
+    <button type="button" data-action="split-form#next" class="btn btn-flat w-100">Suivant</button>
   </div>
-
   <div data-target="split-form.section" class="form-section">
-      <div>
-        <label for="duration-slider" class="fw-bold">Choisissez une durée</label>
-
-        <%= f.input :lenght,
+    <div class="justify-content-start align-items-center pt-3">
+      <button type="button" class="btn" data-action="split-form#previous"><%= image_tag "icons/arrow-left.svg"%></button>
+    </div>
+    <div>
+      <label for="duration-slider" class="fw-bold">Choisissez une durée</label>
+      <%= f.input :lenght,
           as: :range,
           label: false,
           input_html: {
@@ -28,23 +34,25 @@
               class: 'duration-slider-input'
           }
         %>
-
-        <div class="duration-legend">
-          <% Story.lenghts.keys.each do |item| %>
-            <span><%= item %></span>
-          <% end %>
-        </div>
+      <br>
+      <div class="duration-legend">
+        <% Story.lenghts.keys.each do |item| %>
+          <span><%= item %></span>
+        <% end %>
       </div>
-    <button type="button" data-action="split-form#next" class="btn btn-primary next-button">Suivant</button>
+    </div>
+    <button type="button" data-action="split-form#next" class="btn btn-flat w-100">Suivant</button>
   </div>
-
-
   <div data-target="split-form.section" class="form-section">
+    <div class="justify-content-start align-items-center pt-3">
+      <button type="button" data-action="split-form#previous" class="btn" ><%= image_tag "icons/arrow-left.svg"%></button>
+    </div>
     <%= f.simple_fields_for :answer, @answer do |a| %>
-        <%= a.association :question, as: :hidden %>
-        <%= a.label @contextual_question.title %>
-        <%= a.input :content, as: :text, label: false, placeholder: "Votre réponse" %>
-      <% end %>
-    <%= f.submit "Valider", class: "custom-button w-100" %>
+      <%= a.association :question, as: :hidden %>
+      <%= a.label @contextual_question.title %><br>
+      <br>
+      <%= a.input :content, as: :text, label: false, class: 'text-align-center', placeholder: "Votre réponse" %>
+    <% end %>
+    <%= f.submit "Valider", class: "btn btn-flat w-100" %>
   </div>
 <% end %>

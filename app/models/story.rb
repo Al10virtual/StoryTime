@@ -5,8 +5,8 @@ class Story < ApplicationRecord
   has_one_attached :audio
   has_one_attached :image
   enum :lenght, {
-    courte: 0,
-    moyenne: 1,
-    longue: 2
+    Courte: 0,
+    Moyenne: 1,
+    Longue: 2
   }
 end
