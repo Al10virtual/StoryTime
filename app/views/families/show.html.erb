@@ -2,12 +2,12 @@
   <h1 class="text-center text-uppercase mt-3">La famille <%= @family.name  %></h1>
   <p class="fs-2 pt-3">Bonjour <%= @current_user.first_name  %> 👋 !</p>
   <p class="fs-4 pt-3">À qui voulez-vous raconter une histoire aujourd'hui ?</p>
-  <div class="cards">
+  <div class="cards-family">
     <% if @kids.empty?  %>
       <p>Ajoutez un enfant avec le bouton + !</p>
     <% else %>
       <% @kids.order(:id).reverse.each do |kid| %>
-        <%= link_to kid_path(kid), class:'card-kid' do %>
+        <%= link_to kid_path(kid), class:'card-family-kid' do %>
           <% if kid.photo.key.present? %>
             <%= cl_image_tag kid.photo.key, class: 'avatar-large mx-auto' %>
           <% else %>
@@ -18,7 +18,7 @@
       <% end %>
     <% end %>
   </div>
-  <div class="text-center font-italic" style="padding-top: 18rem !important">
-    <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class:"link-success" %>
+  <div class="text-center font-italic" style="padding-top: 5rem !important">
+    <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, style:"color: #cfcfcf" %>
   </div>
 </div>

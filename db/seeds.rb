@@ -7,8 +7,8 @@ Story.destroy_all
 puts "Creating users..."
 
 first_user = User.create!(
-  first_name: "Guillaume",
-  last_name: "Planche",
+  first_name: "Arnaud",
+  last_name: "Legaignoux",
   email: "first@gmail.com",
   password: "azerty",
   admin: true
@@ -54,7 +54,7 @@ Story.create!({
                 lenght: 2,
                 duration: 200,
                 cover_file_name: "story1.png",
-                audio_file_name: "speech/la_foret_perdue.mp3"
+                audio_file_name: "/speech/la_foret_perdue.mp3"
               })
 
 puts "Story 1 created!"
@@ -67,7 +67,7 @@ Story.create!({
                 lenght: 1,
                 duration: 200,
                 cover_file_name: "story2.png",
-                audio_file_name: "speech/la_licorne_enchantee.mp3"
+                audio_file_name: "/speech/la_licorne_enchantee.mp3"
               })
 
 puts "Story 2 created!"
@@ -80,7 +80,7 @@ Story.create!({
                 lenght: 0,
                 duration: 200,
                 cover_file_name: "story3.png",
-                audio_file_name: "speech/le_doudou_magique.mp3"
+                audio_file_name: "/speech/le_doudou_magique.mp3"
               })
 
 puts "Story 3 created!"
@@ -93,7 +93,7 @@ Story.create!({
                 lenght: 0,
                 duration: 200,
                 cover_file_name: "story4.png",
-                audio_file_name: "speech/paolo_et_le_tresor_de_tortuga.mp3"
+                audio_file_name: "/speech/paolo_et_le_tresor_de_tortuga.mp3"
               })
 
 puts "Story 4 created!"
@@ -155,22 +155,32 @@ puts "Created question!"
 puts "Creating contextual questions..."
 
 Question.create!(
-  title: "Quel genre d'endroits magiques ou fantastiques aimerait-il visiter aujourd'hui ?",
+  title: "Quel genre d'endroits magiques votre enfant aimerait-il visiter aujourd'hui ?",
   contextual: true
 )
 
 Question.create!(
-  title: "Quelles sont les valeurs importantes que vous souhaitez transmettre à travers cette histoire ?",
+  title: "Quelles valeurs importantes voulez-vous transmettre à travers cette histoire ?",
   contextual: true
 )
 
 Question.create!(
-  title: "Y a-t-il une leçon importante que vous voulez que votre enfant apprenne dans l'histoire ?",
+  title: "Y a-t-il une leçon importante que vous voulez faire apparaître dans l'histoire ?",
   contextual: true
 )
 
 Question.create!(
   title: "Votre enfant a-t-il une peur ou une difficulté particulière à surmonter ?",
+  contextual: true
+)
+
+Question.create!(
+  title: "Quel est le cadeau que votre enfant aimerait recevoir pour son anniversaire ?",
+  contextual: true
+)
+
+Question.create!(
+  title: "De quoi votre enfant a-t-il peur ?",
   contextual: true
 )
 

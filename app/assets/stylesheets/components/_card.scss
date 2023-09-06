@@ -1,31 +1,19 @@
-.cards {
+.cards-family {
   display: grid;
+  overflow-x: scroll;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
   margin-top: 2rem;
 }
 
-.card {
-  background: white;
-  color: black;
-  border: none;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1rem;
-  justify-content: space-between;
-  h2 {
-    margin: 0px;
-  }
-}
-
-.card-kid {
+.card-family-kid {
   background: white;
   border: none;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   display: inherit;
+  margin-bottom: 10px;
   padding: 15px;
   h2 {
     margin: 0px;
@@ -36,7 +24,16 @@
   font-size: 0.9rem !important;
 }
 
-.card-story {
+.cards-story {
+  display: flex;
+  list-style: none;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  grid-gap: 1rem;
+}
+
+.card-kid-story {
+  width: 90vw;
   background-size: cover;
   background-position: center;
   background: white;
@@ -47,6 +44,22 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   justify-content: space-between;
   margin-bottom: 1rem;
+  h2 {
+    margin: 0px;
+  }
+}
+
+.card-story-show {
+  background-size: cover;
+  background-position: center;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+  margin-bottom: 2rem;
   h2 {
     margin: 0px;
   }

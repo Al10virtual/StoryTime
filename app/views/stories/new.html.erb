@@ -1,15 +1,6 @@
-<div class="my-container" data-controller="story">
-  <div data-story-target="form">
-    <div class="justify-content-start align-items-center pt-3">
-      <%= link_to kid_path(@kid) do %>
-        <%= image_tag "icons/arrow-left.svg"%>
-      <% end %>
-    </div>
-    <div>
-      <h1 class="text-center"> <%= @kid.first_name %></h1>
-    </div>
-    <div data-story-target="form">
-      <%= render "form", kid: @kid, story: @story, class: 'd-block justify-content-center align-items-center' %>
-    </div>
+<div class="my-container">
+  <h1 class="text-center"> <%= @kid.first_name %></h1>
+  <%= render "form", kid: @kid, story: @story, class: 'd-block justify-content-center align-items-center' %>
+  <div style="padding: 100px">
   </div>
 </div>

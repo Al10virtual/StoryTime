@@ -1,6 +1,6 @@
 <%= simple_form_for [family, kid] do |f| %>
-  <%= f.input :first_name, label: "Prénom", placeholder: 'Nom de votre enfant' %><br>
-  <%= f.input :date_of_birth, label: "Date de naissance", input_html: { data: { controller: "datepicker" } } %><br>
+  <%= f.input :first_name, label: "Prénom", placeholder: 'Son prénom !' %><br>
+  <%= f.input :date_of_birth, as: :string, label: "Date de naissance", input_html: { data: { controller: "datepicker" } } %><br>
   <%= f.input :photo, as: :file, label: "Photo de l'enfant", accept: 'image/png,image/jpeg' %><br>
   <%= f.button :submit, class: "btn btn-flat w-100", value: "Ajouter mon enfant" %>
 <% end %>

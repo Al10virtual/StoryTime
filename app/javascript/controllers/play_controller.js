@@ -10,11 +10,12 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log('Play controller connected')
+    console.log('play_controller connected')
   }
 
   go() {
     this.audio = new Audio(this.audioFileValue);
+    console.log('go_method connected');
     this.audio.play();
     this.playBtnTarget.classList.add('d-none');
     this.pauseBtnTarget.classList.remove('d-none');

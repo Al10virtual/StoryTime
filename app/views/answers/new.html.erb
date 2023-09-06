@@ -6,7 +6,10 @@
       <% end %>
     </div>
     <h1><%= @kid.first_name %></h1>
-    <h2 class="mt-5"><%= @question.title %></h2>
+    <div class="d-flex justify-content-center">
+      <h2 class="mt-5"><%= @question.title %></h2>
+      <button class="btn" onClick="window.location.reload();"><%= image_tag "icons/refresh-cw.svg"%></button>
+    </div>
     <div class="mt-5">
       <%= render "form", kid: @kid, answer: @answer, class: 'd-block justify-content-center align-items-center' %>
     </div>

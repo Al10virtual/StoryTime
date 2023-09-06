@@ -1,9 +1,9 @@
-<div class="modal fade" id="readingModal" tabindex="-1" aria-labelledby="readingModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-fullscreen">
-    <div class="modal-content">
-      <div class="modal-header">
+<div class="modal fade" id="readingModal" tabindex="-1">
+  <div class="modal-dialog modal-fullscreen bg-dark text-white">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header bg-dark text-white reader">
         <h2 id="readingModalLabel"><%= story.title %></h2>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Quitter"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
         <div class="justify-content-between">
@@ -12,14 +12,15 @@
           </p>
         </div>
       </div>
-      <div class="modal-footer justify-content-center">
-        <div class="col-auto" data-controller="play" data-play-audio-file-value='<%= story.audio.key.present? ? story.audio.url.gsub(/\.mpga/, ".mp3") : (story.audio_file_name) %>'>
-        </div>
-        <div data-play-target="playBtn" data-action="click->play#go">
-          <%= image_tag "icons/play-circle.svg" %>
-        </div>
-        <div data-play-target="pauseBtn" data-action="click->play#pause" class="d-none">
-          <%= image_tag "icons/pause-circle.svg" %>
+      <div class="modal-footer justify-content-center bg-dark text-white reader">
+        <% url_speech = (story.audio.attached?) ? story.audio.url.gsub(/\.mpga/, ".mp3") : story.audio_file_name %>
+        <div class="col-auto" data-controller="play" data-play-audio-file-value="<%=url_speech%>"%>
+          <div data-play-target="playBtn" data-action="click->play#go">
+            <%= image_tag "icons/play-circle.svg" %>
+          </div>
+          <div class="d-none" data-play-target="pauseBtn" data-action="click->play#pause">
+            <%= image_tag "icons/pause-circle.svg" %>
+          </div>
         </div>
       </div>
     </div>

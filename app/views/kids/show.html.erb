@@ -13,7 +13,7 @@
       <% end %>
     </div>
     <h1 class="text-center"><%= @kid.first_name %></h1>
-    <h2 class="text-center mb-3"><%= @kid.age %> ans</h2>
+    <h2 class="text-center"><%= @kid.age %> ans</h2>
     <h2>Son monde</h2>
     <div class="d-flex w-100 flex-wrap">
       <% if @kid.answers.empty?  %>
@@ -40,25 +40,22 @@
     <% else %>
       <h2 class="mt-3">Ses <%= @kid.stories.count %> histoires</h2>
     <% end %>
-    <% @kid.stories.order(:id).reverse.each do |story| %>
-      <%= link_to kid_story_path(@kid, story) do %>
-        <div class ="card-story">
-          <div class="card-top" style="background-image: url(<%= story.image.attached? ? cl_image_path(story.image.key) : image_path(story.cover_file_name || "conte_de_fee.png") %>)"></div>
-          <div class="card-bottom">
-            <div>
-              <h6 class="card-title"><%= story.title.upcase %></h6>
-              <p class="card-infos"><%= story.theme %> - durée <%= story.lenght %></p>
+    <div class="cards-story">
+      <% @kid.stories.order(:id).reverse.each do |story| %>
+        <%= link_to kid_story_path(@kid, story) do %>
+          <div class ="card-kid-story">
+            <div class="card-top" style="background-image: url(<%= story.image.key.present? ? cl_image_path(story.image.key) : image_path(story.cover_file_name || "conte_de_fee.png") %>)"></div>
+            <div class="card-bottom">
+              <div>
+                <h6 class="card-title"><%= story.title.upcase %></h6>
+                <p class="card-infos"><%= story.theme %> - durée <%= story.lenght %></p>
+              </div>
+              <div class="custom-button">Voir</div>
             </div>
-            <div class="custom-button">Réécouter</div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-  <div class="text-center">
-    <%= link_to kid_path(@kid), data: { turbo_method: :delete, turbo_confirm: 'Êtes-vous sûr de vouloir supprimer le profil de cet enfant ?'} do %>
-      <%= image_tag "icons/trash.svg"%>
-    <% end %>
+    </div>
   </div>
   <div style="padding: 100px">
   </div>

@@ -24,13 +24,14 @@
             <p class="my-content">
               <span class="first-letter"><%= story.content[0] %></span><%= story.content[1..-1] %>
             </p>
-            <button class="custom-button w-100" data-bs-toggle="modal" data-bs-target="#readingModal">Voir l'histoire</button>
+            <button class="custom-button w-100" data-bs-toggle="modal" data-bs-target="#readingModal">Lire l'histoire</button>
             <%= render "stories/reading_story_modal", story: story %>
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <div style="padding: 100px">
   </div>
 </div>
