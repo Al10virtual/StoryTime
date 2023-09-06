@@ -1,8 +1,3 @@
-<div class="image-box">
-  <div class="image-wrapper">
-    <%= image_tag("#{theme}.png", class: "responsive-image") %>
-  </div>
-  <div class="image-caption">
-    <%= theme %>
-  </div>
+<div class="image-wrapper" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= image_path("#{theme == "Conte de fée" ? "conte_de_fee" : theme}.png") %>)">
+  <span><%= theme %></span>
 </div>
