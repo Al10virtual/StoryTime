@@ -7,8 +7,8 @@ Story.destroy_all
 puts "Creating users..."
 
 first_user = User.create!(
-  first_name: "Guillaume",
-  last_name: "Planche",
+  first_name: "Arnaud",
+  last_name: "Legaignoux",
   email: "first@gmail.com",
   password: "azerty",
   admin: true
