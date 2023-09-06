@@ -1,6 +1,10 @@
 class StoriesController < ApplicationController
   before_action :set_kid, only: %i[new create show]
 
+  def show
+    @story = Story.find(params[:id])
+  end
+
   def new
     @story = Story.new
     @contextual_question = Question.where(contextual: true).sample
@@ -8,8 +12,7 @@ class StoriesController < ApplicationController
   end
 
   def create
-    @story = Story.new(theme: story_params[:theme],
-                       lenght: story_params[:lenght].to_i)
+    @story = Story.new(theme: story_params[:theme], lenght: story_params[:lenght].to_i)
     @story.kid = @kid
     @contextual_question = Question.find(params.dig(:story, :answer, :question_id))
     @answer = Answer.create(content: params.dig(:story, :answer, :content), kid: @kid, question: @contextual_question)
@@ -21,8 +24,16 @@ class StoriesController < ApplicationController
     end
   end
 
-  def show
+  def destroy
     @story = Story.find(params[:id])
+    @kid = @story.kid
+
+    if @story.destroy
+      flash[:notice] = "L'histoire a bien été supprimée !"
+      redirect_to kid_path(@kid)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
