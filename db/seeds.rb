@@ -54,7 +54,7 @@ Story.create!({
                 lenght: 2,
                 duration: 200,
                 cover_file_name: "story1.png",
-                audio_file_name: "speech/la_foret_perdue.mp3"
+                audio_file_name: "/speech/la_foret_perdue.mp3"
               })
 
 puts "Story 1 created!"
@@ -67,7 +67,7 @@ Story.create!({
                 lenght: 1,
                 duration: 200,
                 cover_file_name: "story2.png",
-                audio_file_name: "speech/la_licorne_enchantee.mp3"
+                audio_file_name: "/speech/la_licorne_enchantee.mp3"
               })
 
 puts "Story 2 created!"
@@ -80,7 +80,7 @@ Story.create!({
                 lenght: 0,
                 duration: 200,
                 cover_file_name: "story3.png",
-                audio_file_name: "speech/le_doudou_magique.mp3"
+                audio_file_name: "/speech/le_doudou_magique.mp3"
               })
 
 puts "Story 3 created!"
@@ -93,7 +93,7 @@ Story.create!({
                 lenght: 0,
                 duration: 200,
                 cover_file_name: "story4.png",
-                audio_file_name: "speech/paolo_et_le_tresor_de_tortuga.mp3"
+                audio_file_name: "/speech/paolo_et_le_tresor_de_tortuga.mp3"
               })
 
 puts "Story 4 created!"
