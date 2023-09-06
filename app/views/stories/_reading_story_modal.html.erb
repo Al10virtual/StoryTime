@@ -1,18 +1,18 @@
 <div class="modal fade" id="readingModal" tabindex="-1">
   <div class="modal-dialog modal-fullscreen bg-dark text-white">
     <div class="modal-content bg-dark text-white">
-      <div class="modal-header bg-dark text-white">
+      <div class="modal-header bg-dark text-white reader">
         <h2 id="readingModalLabel"><%= story.title %></h2>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body bg-dark text-white">
+      <div class="modal-body">
         <div class="justify-content-between">
           <p class="reading-content">
             <span class="first-letter"><%= story.content[0] %></span><%= story.content[1..-1] %>
           </p>
         </div>
       </div>
-      <div class="modal-footer justify-content-center bg-dark text-white">
+      <div class="modal-footer justify-content-center bg-dark text-white reader">
         <div class="col-auto" data-controller="play" data-play-audio-file-value='<%= story.audio.key.present? ? story.audio.url.gsub(/\.mpga/, ".mp3") : (story.audio_file_name) %>'>
         </div>
         <div data-play-target="playBtn" data-action="click->play#go">

@@ -14,13 +14,10 @@
   }
 }
 
-.story-theme-input + label {
-
-}
 
 .story-theme-input:checked + label {
   .image-wrapper {
-    outline: 3px solid $orange;
+    outline: 4px solid $orange;
   }
 
 }

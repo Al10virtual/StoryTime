@@ -155,22 +155,32 @@ puts "Created question!"
 puts "Creating contextual questions..."
 
 Question.create!(
-  title: "Quel genre d'endroits magiques ou fantastiques aimerait-il visiter aujourd'hui ?",
+  title: "Quel genre d'endroits magiques votre enfant aimerait-il visiter aujourd'hui ?",
   contextual: true
 )
 
 Question.create!(
-  title: "Quelles sont les valeurs importantes que vous souhaitez transmettre à travers cette histoire ?",
+  title: "Quelles valeurs importantes voulez-vous transmettre à travers cette histoire ?",
   contextual: true
 )
 
 Question.create!(
-  title: "Y a-t-il une leçon importante que vous voulez que votre enfant apprenne dans l'histoire ?",
+  title: "Y a-t-il une leçon importante que vous voulez faire apparaître dans l'histoire ?",
   contextual: true
 )
 
 Question.create!(
   title: "Votre enfant a-t-il une peur ou une difficulté particulière à surmonter ?",
+  contextual: true
+)
+
+Question.create!(
+  title: "Quel est le cadeau que votre enfant aimerait recevoir pour son anniversaire ?",
+  contextual: true
+)
+
+Question.create!(
+  title: "De quoi votre enfant a-t-il peur ?",
   contextual: true
 )
 
