@@ -11,5 +11,10 @@ class GenerateStoryAudioJob < ApplicationJob
     end
     story.audio.purge if story.audio.attached?
     story.audio.attach(io: File.open(save_path), filename: file_name, content_type: 'audio/mp3')
+    broadcast(story)
+  end
+
+  def broadcast(story)
+    StoryChannel.broadcast_to(story, { step: "audio" })
   end
 end

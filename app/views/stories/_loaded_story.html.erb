@@ -9,7 +9,7 @@
   <div class="row mt-5">
     <div class="col-12">
       <div class="card-story mb-4">
-        <div class="card-top" style="background-image: url(<%= story.image.key.present? ? cl_image_path(story.image.key) : image_path(story.cover_file_name) %>)"></div>
+        <div class="card-top" style="background-image: url(<%= story.image.attached? ? cl_image_path(story.image.key) : image_path(story.cover_file_name || "conte_de_fee.png") %>)"></div>
         <div class="card-story-bottom">
           <h4 class="card-title"><%= story.title %></h4>
           <div class="justify-content-between">
@@ -25,7 +25,7 @@
               <span class="first-letter"><%= story.content[0] %></span><%= story.content[1..-1] %>
             </p>
             <button class="custom-button w-100" data-bs-toggle="modal" data-bs-target="#readingModal">Voir l'histoire</button>
-            <%= render "reading_story_modal", story: story %>
+            <%= render "stories/reading_story_modal", story: story %>
           </div>
         </div>
       </div>
