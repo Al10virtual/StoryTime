@@ -13,13 +13,15 @@
         </div>
       </div>
       <div class="modal-footer justify-content-center">
-        <div class="col-auto" data-controller="play" data-play-audio-file-value='<%= story.audio.key.present? ? story.audio.url.gsub(/\.mpga/, ".mp3") : (story.audio_file_name) %>'>
-        </div>
-        <div data-play-target="playBtn" data-action="click->play#go">
-          <%= image_tag "icons/play-circle.svg" %>
-        </div>
-        <div data-play-target="pauseBtn" data-action="click->play#pause" class="d-none">
-          <%= image_tag "icons/pause-circle.svg" %>
+        <% url_speech = (story.audio.attached?) ? story.audio.url.gsub(/\.mpga/, ".mp3") : story.audio_file_name %>
+        <div class="col-auto" data-controller="play" data-play-audio-file-value="<%=url_speech%>"%>
+
+            <div data-play-target="playBtn" data-action="click->play#go">
+              <%= image_tag "icons/play-circle.svg" %>
+            </div>
+            <div class="d-none" data-play-target="pauseBtn" data-action="click->play#pause">
+              <%= image_tag "icons/pause-circle.svg" %>
+            </div>
         </div>
       </div>
     </div>
