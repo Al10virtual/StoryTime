@@ -8,7 +8,7 @@
     <%= f.input :theme,
             as: :radio_buttons,
             collection: Story::THEMES,
-            label: "Le thème de l'histoire",
+            label: "Quel sera le thème de votre histoire ?",
             label_html: { style: 'font-size: 2.5rem' },
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'story-theme-wrapper',
@@ -22,7 +22,7 @@
       <button type="button" class="btn" data-action="split-form#previous"><%= image_tag "icons/arrow-left.svg"%></button>
     </div>
     <div>
-      <label for="duration-slider" class="fw-bold">Choisissez une durée</label>
+      <label for="duration-slider" class="fw-bold" style="font-size: 1.2rem">De combien de temps disposez-vous pour raconter cette histoire ?</label>
       <%= f.input :lenght,
           as: :range,
           label: false,
@@ -36,8 +36,8 @@
         %>
       <br>
       <div class="duration-legend">
-        <% Story.lenghts.keys.each do |item| %>
-          <span><%= item %></span>
+        <% Story.label_for_form.each do |label| %>
+          <span><%= label %></span>
         <% end %>
       </div>
     </div>
@@ -51,7 +51,7 @@
       <%= a.association :question, as: :hidden %>
       <%= a.label @contextual_question.title %><br>
       <br>
-      <%= a.input :content, as: :text, label: false, class: 'text-align-center', placeholder: "Votre réponse" %>
+      <%= a.input :content, label: false, class: 'text-align-center', placeholder: "Votre réponse" %>
     <% end %>
     <%= f.submit "Valider", class: "btn btn-flat w-100" %>
   </div>

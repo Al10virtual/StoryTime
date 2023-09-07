@@ -1,25 +1,28 @@
 .my-content {
+  font-family: $reader-font;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--read-more-line-clamp, 4);
   text-align: justify;
   font-size: 1.3rem;
-//   p::first-letter {
-//     color: red;
-//     font-size: 2rem;
-//   }
-}
+  //   p::first-letter {
+    //     color: red;
+    //     font-size: 2rem;
+    //   }
+  }
 
-.first-letter {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #FC7300;
-}
+  .first-letter {
+    font-family: $headers-font;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FC7300;
+  }
 
-
-.reading-content {
+  .reading-content {
+  font-family: $reader-font;
   align-self: center;
-  text-align: justify;
+  text-align: center;
   font-size: 1.8rem;
+  line-height: 3rem;
 }
