@@ -16,7 +16,6 @@ class GenerateStoryContentJob < ApplicationJob
 
     StoryChannel.broadcast_to(story, { step: "text" })
 
-
     GenerateStoryAudioJob.perform_now(story)
     GenerateStoryImageJob.perform_now(story)
 
@@ -30,11 +29,5 @@ class GenerateStoryContentJob < ApplicationJob
     age = today.year - date_of_birth.year
     age -= 1 if today < date_of_birth + age.years
     age
-  end
-
-  def broadcast(story)
-    StoryChannel.broadcast_to(story, {
-      html: ApplicationController.renderer.render_to_string(partial: 'stories/loaded_story', locals: { story: story, kid: story.kid }, formats: :html)
-    })
   end
 end

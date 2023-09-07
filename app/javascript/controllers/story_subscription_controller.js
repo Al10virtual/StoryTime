@@ -21,13 +21,13 @@ export default class extends Controller {
   handleReceivedData(data) {
     if (data.step && data.step === "text") {
       console.log("text recu");
-      this.textTarget.innerHTML = "✅"
+      this.textTarget.innerHTML = '<div class="green-circle"></div>';
     } else if (data.step && data.step === "audio") {
       console.log("audio recu");
-      this.audioTarget.innerHTML = "✅"
+      this.audioTarget.innerHTML = '<div class="green-circle"></div>';
     } else if (data.step && data.step === "image") {
       console.log("image recue");
-      this.imageTarget.innerHTML = "✅";
+      this.imageTarget.innerHTML = '<div class="green-circle"></div>';
       setTimeout(() => {
         console.log(data.html);
         this.storyTarget.outerHTML = data.html

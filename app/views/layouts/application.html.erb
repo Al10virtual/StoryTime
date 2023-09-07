@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>StoryTime</title>
+    <title>StoryTime - An exciting adventure every night</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,11 +9,17 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
-  <%= javascript_importmap_tags %>
-  <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <%= render 'shared/ios_pwa_links' %>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+    <%= javascript_importmap_tags %>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+     <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="StoryTime - An exciting adventure every night">
+    <meta property="og:description" content="StoryTime crafts unique stories for kids aged 2 to 7, tailored to their preferences, interests, and personal details. Dive into a world where each story revolves around your child's chosen theme.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.storytime.day">
+    <meta property="og:image" content="<%= asset_url('banner2.jpg') %>">
+    <%= render 'shared/ios_pwa_links' %>
 </head>
 <body class="<%= controller_name %>-<%= action_name %>">
   <% unless controller_name == "pages" && action_name == "home" %>

@@ -3,7 +3,6 @@
   data-story-subscription-story-id-value="<%= @story.id %>"
   data-story-subscription-target="story">
     <div class="justify-content-start align-items-center pt-3">
-
       <%= link_to kid_path(kid) do %>
         <%= image_tag "icons/arrow-left.svg"%>
       <% end %>
@@ -12,28 +11,28 @@
         <div class="justify-content-start align-items-center pt-3">
           <h1 class="text-center">La magie de StoryTime opère 🪄</h1>
           <div class="d-flex justify-content-around align-items-center pt-3">
-            <div data-story-subscription-target="text">
-              <div class="spinner">
+            <div style="text-align: center">
+              <div class="spinner" data-story-subscription-target="text">
                 <div class="double-bounce1"></div>
                 <div class="double-bounce2"></div>
               </div>
-              <span>Texte📙</span>
+              <span>📙</span>
             </div>
 
-            <div data-story-subscription-target="audio">
-              <div class="spinner">
+            <div style="text-align: center">
+              <div class="spinner" data-story-subscription-target="audio">
                 <div class="double-bounce1"></div>
                 <div class="double-bounce2"></div>
               </div>
-              <span>Audio🎧</span>
+              <span>🎧</span>
             </div>
 
-            <div data-story-subscription-target="image">
-              <div class="spinner">
+            <div style="text-align: center">
+              <div class="spinner" data-story-subscription-target="image">
                 <div class="double-bounce1"></div>
                 <div class="double-bounce2"></div>
               </div>
-              <span>Image🖼️</span>
+              <span>🖼️</span>
             </div>
           </div>
 
