@@ -10,6 +10,10 @@
 @import "pages/index";
 @import "stories/index";
 
+body {
+  overscroll-behavior: none;
+}
+
 h1 {
   font-size: 4rem;
 }
@@ -25,3 +29,14 @@ h6 {
 label {
   font-weight: bold;
 }
+
+#typing-field {
+  height: 290px;
+  min-height: 290px;
+  max-height: 290px;
+}
+// .form-actions {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }

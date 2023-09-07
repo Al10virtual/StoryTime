@@ -22,7 +22,7 @@
     <%= render 'shared/ios_pwa_links' %>
 </head>
 <body class="<%= controller_name %>-<%= action_name %>">
-  <% unless controller_name == "pages" && action_name == "home" %>
+  <% unless controller_name == "pages" && action_name == "home" || controller_name == "stories" && action_name == "show" %>
     <%= render "shared/mobile_nav" %>
   <% end %>
   <%= render "shared/flashes" %>

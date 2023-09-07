@@ -6,9 +6,6 @@ export default class extends Controller {
   static targets = ["typeA", "typeB", "typeC", "typeD", "typeE", "typeF", "typeG", "typeH"]
 
   connect() {
-
-    console.log("Typing field connected");
-
     const typed = new Typed('#typing-field', {
       strings: [
        this.typeATarget.innerText,
