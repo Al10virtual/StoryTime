@@ -20,6 +20,9 @@
               <span class="badge st-badge rounded-pill text-white text-bg-secondary m-1 p-2">
                 Durée <%= story.lenght %>
               </span>
+              <span class="badge st-badge rounded-pill text-white text-bg-secondary m-1 p-2">
+                <%= story.created_at.strftime("%d/%m/%Y")%>
+              </span>
             </div>
             <p class="my-content">
               <span class="first-letter"><%= story.content[0] %></span><%= story.content[1..-1] %>
@@ -31,7 +34,6 @@
       </div>
     </div>
   </div>
-
   <div style="padding: 100px">
   </div>
 </div>

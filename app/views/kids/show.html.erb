@@ -49,7 +49,7 @@
             <div class="card-bottom">
               <div>
                 <h6 class="card-title"><%= story.title&.upcase %></h6>
-                <p class="card-infos"><%= story.theme %>, durée <%= story.lenght %>, créée le <%= story.created_at%></p>
+                <p class="card-infos"><%= story.theme %>, durée <%= story.lenght %>, créée le <%= story.created_at.strftime("%d/%m/%Y")%></p>
               </div>
               <div class="custom-button">Voir</div>
             </div>
