@@ -11,7 +11,7 @@
       <div class="card-story-show mb-4">
         <div class="card-top" style="background-image: url(<%= story.image.attached? ? cl_image_path(story.image.key) : image_path(story.cover_file_name || "conte_de_fee.png") %>)"></div>
         <div class="card-story-bottom">
-          <h4 class="card-title"><%= story.title %></h4>
+          <h4 class="card-title-story-show"><%= story.title %></h4>
           <div class="justify-content-between">
             <div class="d-flex">
               <span class="badge st-badge rounded-pill text-white text-bg-secondary m-1 p-2">
