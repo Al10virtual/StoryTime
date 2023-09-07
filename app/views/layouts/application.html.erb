@@ -9,14 +9,16 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
-    <%= javascript_importmap_tags %>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <%= render 'shared/ios_pwa_links' %>
+  <%= javascript_importmap_tags %>
+  <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <%= render 'shared/ios_pwa_links' %>
 </head>
 <body class="<%= controller_name %>-<%= action_name %>">
-  <%= render "shared/mobile_nav" %>
+  <% unless controller_name == "pages" && action_name == "home" %>
+    <%= render "shared/mobile_nav" %>
+  <% end %>
   <%= render "shared/flashes" %>
   <%= yield %>
 </div>
