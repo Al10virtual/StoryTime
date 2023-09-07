@@ -1,41 +1,49 @@
-<div
-  data-controller="story-subscription"
-  data-story-subscription-story-id-value="<%= @story.id %>"
-  data-story-subscription-target="story">
+<div class="my-container">
+  <div data-controller="story-subscription"
+     data-story-subscription-story-id-value="<%= @story.id %>"
+     data-story-subscription-target="story">
     <div class="justify-content-start align-items-center pt-3">
       <%= link_to kid_path(kid) do %>
         <%= image_tag "icons/arrow-left.svg"%>
       <% end %>
-
-      <div class="container">
-        <div class="justify-content-start align-items-center pt-3">
-          <h1 class="text-center">La magie de StoryTime opère 🪄</h1>
+    </div>
+    <div class="container">
+      <div class="justify-content-start align-items-center pt-3 loader-layout"
+         data-controller="typing">
+        <h1 id="typing-field" class="text-center">
+          <div data-typing-target="typeA" class="d-none">La magie de StoryTime opère... 🪄</div>
+          <div data-typing-target="typeB" class="d-none">Génération d'une histoire sur le thème "<%= @story.theme %>"...</div>
+          <div data-typing-target="typeC" class="d-none">d'une durée de 2 minutes...</div>
+          <div data-typing-target="typeD" class="d-none">pour un enfant de <%= @kid.age %> ans...</div>
+          <div data-typing-target="typeE" class="d-none">Personnalisation de l'histoire avec <%= @kid.answers.last.content %>...</div>
+          <div data-typing-target="typeF" class="d-none">Relecture des meilleurs Roald Dahl...</div>
+          <div data-typing-target="typeG" class="d-none">Analyse des histoires préférées de <%= @kid.first_name %>...</div>
+          <div data-typing-target="typeH" class="d-none">Encore un petit instant... 🌟</div>
+        </h1>
+        <div>
           <div class="d-flex justify-content-around align-items-center pt-3">
-            <div style="text-align: center">
+            <div class="mx-3"style="text-align: center">
               <div class="spinner" data-story-subscription-target="text">
                 <div class="double-bounce1"></div>
                 <div class="double-bounce2"></div>
               </div>
-              <span>📙</span>
+              <span style="font-size: 3rem">📙</span>
             </div>
-
-            <div style="text-align: center">
+            <div class="mx-3" style="text-align: center">
               <div class="spinner" data-story-subscription-target="audio">
                 <div class="double-bounce1"></div>
                 <div class="double-bounce2"></div>
               </div>
-              <span>🎧</span>
+              <span style="font-size: 3rem">🎧</span>
             </div>
-
-            <div style="text-align: center">
+            <div class="mx-3" style="text-align: center">
               <div class="spinner" data-story-subscription-target="image">
                 <div class="double-bounce1"></div>
                 <div class="double-bounce2"></div>
               </div>
-              <span>🖼️</span>
+              <span style="font-size: 3rem">🖼️</span>
             </div>
           </div>
-
           <div class='pen-animation-container'>
             <svg xmlns="http://www.w3.org/2000/svg" height="200px" width="200px" viewBox="0 0 200 200" class="pencil">
               <defs>
@@ -46,9 +54,9 @@
               <circle transform="rotate(-113,100,100)" stroke-linecap="round" stroke-dashoffset="439.82" stroke-dasharray="439.82 439.82" stroke-width="2" stroke="currentColor" fill="none" r="70" class="pencil__stroke"></circle>
               <g transform="translate(100,100)" class="pencil__rotate">
                 <g fill="none">
-                  <circle transform="rotate(-90)" stroke-dashoffset="402" stroke-dasharray="402.12 402.12" stroke-width="30" stroke="hsl(196, 100%, 18%)" r="64" class="pencil__body1"></circle>
-                  <circle transform="rotate(-90)" stroke-dashoffset="465" stroke-dasharray="464.96 464.96" stroke-width="10" stroke="hsl(196, 97%, 28%)" r="74" class="pencil__body2"></circle>
-                  <circle transform="rotate(-90)" stroke-dashoffset="339" stroke-dasharray="339.29 339.29" stroke-width="10" stroke="hsl(196, 100%, 8%)" r="54" class="pencil__body3"></circle>
+                  <circle transform="rotate(-90)" stroke-dashoffset="402" stroke-dasharray="402.12 402.12" stroke-width="30" stroke="#00425A" r="64" class="pencil__body1"></circle>
+                  <circle transform="rotate(-90)" stroke-dashoffset="465" stroke-dasharray="464.96 464.96" stroke-width="10" stroke="#00425A" r="74" class="pencil__body2"></circle>
+                  <circle transform="rotate(-90)" stroke-dashoffset="339" stroke-dasharray="339.29 339.29" stroke-width="10" stroke="#00425A" r="54" class="pencil__body3"></circle>
                 </g>
                 <g transform="rotate(-90) translate(49,0)" class="pencil__eraser">
                   <g class="pencil__eraser-skew">
@@ -72,4 +80,5 @@
         </div>
       </div>
     </div>
+  </div>
 </div>
