@@ -233,7 +233,7 @@ Answer.create!(
 puts "Creating answers for #{second_kid.first_name}..."
 
 Answer.create!(
-  content: "Archibald - Après la pluie",
+  content: "Après la pluie",
   kid: Kid.second,
   question: question5
 )
@@ -257,7 +257,7 @@ Answer.create!(
 )
 
 Answer.create!(
-  content: "Sa voiture Flash McQueen",
+  content: "Flash McQueen",
   kid: Kid.second,
   question: question3
 )

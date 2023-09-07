@@ -40,7 +40,7 @@ class GenerateStoryContentJob < ApplicationJob
     "Agis comme un auteur de livres pour enfants. Écris une histoire de #{length_prompt(story)} de type \"#{story.theme}\" pour #{@kid.first_name}.
      Adapte l'histoire à son âge qui est de #{age} ans. Tiens également compte du contexte suivant : à la question \"#{answer.question.title}\", les parents de #{@kid.first_name} ont répondu \"#{answer.content}\".
      #{additional_context}
-     Réponds-moi au format JSON avec le titre de l'histoire contenu dans une clé \"title\" et son contenu dans une clé \"content\"."
+     Réponds-moi au format JSON avec le titre de l'histoire contenu dans une clé title et son contenu dans une clé content."
   end
 
   def generate_story_content(story)
