@@ -88,7 +88,7 @@ body.pages-home {
 }
 
 #tagline {
-  color: #fd6c24;
+  color: #FFF;
   text-align: center;
   font-family: "Nunito";
   font-weight: 500;
@@ -143,13 +143,31 @@ body.pages-home {
   }
 }
 
+.button-1 {
+  align-items: center;
+  appearance: none;
+  background-clip: padding-box;
+  background-color: initial;
+  background-image: none;
+  font-family: "Nunito";
+  font-size: 16px;
+  font-weight: 800;
+  justify-content: center;
+  line-height: 24px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  background-color: #ff9f50;
+}
+
+
 .button-78:before,
 .button-78:after {
   border-radius: 80px;
 }
 
 .button-78:before {
-  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
   content: "";
   display: block;
   height: 100%;
@@ -159,11 +177,12 @@ body.pages-home {
   top: 0;
   width: 100%;
   z-index: -2;
+  background-color: #ff9f50;
 }
 
 .button-78:after {
   background-color: initial;
-  background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
+  // background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
   bottom: 4px;
   content: "";
   display: block;
