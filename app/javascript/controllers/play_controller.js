@@ -1,6 +1,5 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
-// Connects to data-controller="play"
 
 export default class extends Controller {
   static targets = ['playBtn', 'pauseBtn']

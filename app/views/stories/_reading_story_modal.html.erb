@@ -14,6 +14,7 @@
       </div>
       <div class="modal-footer justify-content-center bg-dark text-white reader">
         <% url_speech = (story.audio.attached?) ? story.audio.url.gsub(/\.mpga/, ".mp3") : story.audio_file_name %>
+        <!--
         <div class="col-auto" data-controller="play" data-play-audio-file-value="<%=url_speech%>"%>
           <div data-play-target="playBtn" data-action="click->play#go">
             <%= image_tag "icons/play-circle.svg" %>
@@ -22,6 +23,22 @@
             <%= image_tag "icons/pause-circle.svg" %>
           </div>
         </div>
+
+        <div>
+          <audio data-controller="plyr" id="player" controls >
+            <source src="<%= url_speech%> " type="audio/mp3" />
+          </audio>
+        </div>
+
+         -->
+        <div >
+          <audio id="player" controls>
+          <source src="<%= url_speech%> " type="audio/mp3" />
+          </audio>
+        </div>
+
+
+
       </div>
     </div>
   </div>
