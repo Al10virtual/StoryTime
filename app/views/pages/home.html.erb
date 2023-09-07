@@ -1,15 +1,17 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'banner.jpg' %>)">
-  <div>
-    <h1 style="font-size: 6rem;">StoryTime</h1>
-    <p>Créez des histoires personnalisées pour vos enfants</p>
-    <% if user_signed_in? %>
-      <%= link_to family_path(current_user) do %>
-        <button class="btn btn-flat w-100">Raconter une histoire</button>
-      <% end %>
-    <% else %>
-      <%= link_to new_user_registration_path do %>
-        <button class="btn btn-flat w-100">Raconter une histoire</button>
-      <% end %>
-    <% end %>
-    </div>
+<div data-controller="animation" class="bg-dark">
+  <canvas id="cnv"></canvas>
+  <div id='stars'></div>
+  <div id='stars2'></div>
+  <div id='stars3'></div>
+  <div id='title'>
+    <span>
+      STORYTIME
+    </span>
+    <br>
+    <span >
+    </span>
+    <p id="tagline">Créez des histoires personalisées pour vos enfants</p>
+    <%= link_to "Raconte-moi une histoire !", @family ? family_path(@family) : new_user_session_path, class: "button-78" %>
+
   </div>
+</div>
