@@ -4,7 +4,7 @@ class Story < ApplicationRecord
   belongs_to :kid
   has_one_attached :audio
   has_one_attached :image
-  enum :lenght, {
+  enum :length, {
     courte: 0,
     moyenne: 1,
     longue: 2
@@ -16,8 +16,8 @@ class Story < ApplicationRecord
       moyenne: "5 min",
       longue: "10 min"
     }
-    lenghts.keys.map do |lenght|
-      [durations[lenght.to_sym]].join(" ")
+    lengths.keys.map do |length|
+      [durations[length.to_sym]].join(" ")
     end
   end
 end
