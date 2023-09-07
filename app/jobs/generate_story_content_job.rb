@@ -13,12 +13,9 @@ class GenerateStoryContentJob < ApplicationJob
     story.content = chat_gpt_response["content"]
     story.title = chat_gpt_response["title"]
     story.save
-
     StoryChannel.broadcast_to(story, { step: "text" })
-
     GenerateStoryAudioJob.perform_now(story)
     GenerateStoryImageJob.perform_now(story)
-
     broadcast(story)
   end
 
