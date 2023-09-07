@@ -1,10 +1,11 @@
 import { Controller } from "@hotwired/stimulus"
-import Plyr from 'plyr';
+// import Plyr from 'plyr';
 
 // Connects to data-controller="play"
 
 export default class extends Controller {
-  static targets = ['playBtn', 'pauseBtn', 'plyrControl']
+  static targets = ['playBtn', 'pauseBtn']
+  // static targets = ['playBtn', 'pauseBtn', 'plyrControl']
 
   static values = {
     audioFile: String
@@ -12,9 +13,7 @@ export default class extends Controller {
 
   connect() {
     console.log('play_controller connected')
-
-    const player = new Plyr(this.plyrControlTarget);
-    console.log(player);
+    // const player = new Plyr(this.plyrControlTarget);
   }
 
   go() {
