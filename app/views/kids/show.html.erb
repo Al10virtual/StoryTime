@@ -47,11 +47,11 @@
           <div class ="card-kid-story">
             <div class="card-top" style="background-image: url(<%= story.image.key.present? ? cl_image_path(story.image.key) : image_path(story.cover_file_name || "conte_de_fee.png") %>)"></div>
             <div class="card-bottom">
+              <h6 class="card-title"><%= story.title&.upcase %></h6>
               <div>
-                <h6 class="card-title"><%= story.title&.upcase %></h6>
-                <p class="card-infos"><%= story.theme %>, durée <%= story.lenght %>, créée le <%= story.created_at.strftime("%d/%m/%Y")%></p>
+                <p class="card-infos"><%= story.theme %> | Durée <%= story.lenght %> | Créée le <%= story.created_at.strftime("%d/%m/%Y")%></p>
+                <div class="custom-button">Voir</div>
               </div>
-              <div class="custom-button">Voir</div>
             </div>
           </div>
         <% end %>
