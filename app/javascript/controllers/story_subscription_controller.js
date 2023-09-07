@@ -31,6 +31,7 @@ export default class extends Controller {
       setTimeout(() => {
         console.log(data.html);
         this.storyTarget.outerHTML = data.html
+        document.getElementById('story-show-navbar').classList.remove('d-none')
       }, 2000)
     }
   }

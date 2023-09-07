@@ -1,13 +1,15 @@
 .st-badge-plus {
-  width: 30px;
-  height: 30px;
+  height: 1.375rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  aspect-ratio: 1 / 1;
 }
 
 .st-badge {
+  height: 1.375rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.1rem 0.6rem !important;
 }

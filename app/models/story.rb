@@ -1,5 +1,6 @@
 class Story < ApplicationRecord
   THEMES = ["Aventure", "Conte de fée", "Fantaisie", "Historique", "Mystère", "Educatif"]
+  # THEMES = ["Aventure", "Conte de fée", "Fantaisie", "Héros/Héroïnes", "Magie", "Conte de Noël"]
 
   belongs_to :kid
   has_one_attached :audio

@@ -5,7 +5,7 @@ class GenerateStoryImageJob < ApplicationJob
   queue_as :default
 
   def perform(story)
-    story.image_prompt = "Crée une illustration fantastique pour enfants sans texte sur le thème suivant: #{story.title}."
+    story.image_prompt = "Crée l'illustration d'un conte pour enfant dont le titre est : \"#{story.title}\"."
     image_size = "512x512"
     image_url = ChatGptService.generate_image(story.image_prompt, image_size)
     file = URI.open(image_url)
