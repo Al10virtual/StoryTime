@@ -22,7 +22,9 @@
     <%= render 'shared/ios_pwa_links' %>
 </head>
 <body class="<%= controller_name %>-<%= action_name %>">
-  <%= render "shared/mobile_nav" %>
+  <% unless controller_name == "pages" && action_name == "home" %>
+    <%= render "shared/mobile_nav" %>
+  <% end %>
   <%= render "shared/flashes" %>
   <%= yield %>
 </div>

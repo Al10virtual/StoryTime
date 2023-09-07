@@ -1,9 +1,15 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'banner.jpg' %>)">
   <div>
-    <h1>StoryTime</h1>
+    <h1 style="font-size: 6rem;">StoryTime</h1>
     <p>Créez des histoires personnalisées pour vos enfants</p>
-    <%= link_to new_user_registration_path do %>
-      <button class="btn btn-flat w-100">J'y vais !</button>
+    <% if user_signed_in? %>
+      <%= link_to family_path(current_user) do %>
+        <button class="btn btn-flat w-100">Raconter une histoire</button>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_registration_path do %>
+        <button class="btn btn-flat w-100">Raconter une histoire</button>
+      <% end %>
     <% end %>
+    </div>
   </div>
-</div>

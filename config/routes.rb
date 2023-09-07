@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-
   devise_for :users
-  root to: "families#show"
+
+  # authenticated :user do
+  #   root 'families#show', as: :authenticated_root
+  # end
+
+  root "pages#home"
 
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do
