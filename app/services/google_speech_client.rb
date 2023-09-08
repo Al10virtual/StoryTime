@@ -22,8 +22,8 @@ class GoogleSpeechClient
       voice: {
         "languageCode": "fr-FR",
         # "name": "fr-FR-Neural2-D"
-        # "name": ["fr-FR-Wavenet-A", "fr-FR-Wavenet-B", "fr-FR-Wavenet-C", "fr-FR-Wavenet-D", "fr-FR-Wavenet-E"].sample
-        "name": ["fr-FR-Standard-B", "fr-FR-Polyglot-1", "fr-FR-Neural2-C"].sample
+        "name": ["fr-FR-Wavenet-A", "fr-FR-Wavenet-B", "fr-FR-Wavenet-C", "fr-FR-Wavenet-D", "fr-FR-Wavenet-E"].sample
+        # "name": ["fr-FR-Standard-B", "fr-FR-Polyglot-1", "fr-FR-Neural2-C"].sample
       },
       audioConfig: {
         "audioEncoding": "MP3",
