@@ -5,6 +5,7 @@
 // External libraries
 @import "bootstrap";
 @import "font-awesome";
+
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
@@ -35,6 +36,48 @@ label {
   min-height: 275px;
   max-height: 275px;
 }
+
+.plyr__controls {
+	--plyr-color-main: #0d0d0d00;
+  --plyr-audio-controls-background:#f000  ;
+  --plyr-audio-control-color:#fc7300;
+  --plyr-audio-control-color-hover: red;
+	//--plyr-range-thumb-background: #red;
+	--plyr-range-fill-background: #orange;
+	--plyr-audio-range-track-background: ##ffa5005e;
+
+  //--plyr-focus-visible-color: yellow;
+	//--plyr-badge-background: yellow;
+  //--plyr-badge-text-color: yellow;
+	//--plyr-captions-background: yellow;
+  //--plyr-control-toggle-checked-background : yellow;
+  //--plyr-menu-background: yellow;
+  //--plyr-menu-border-color: yellow;
+  //--plyr-menu-color: yellow;
+  //--plyr-menu-item-arrow-color: yellow;
+  //--plyr-progress-loading-background: yellow;
+	//--plyr-tooltip-background: yellow ;
+	//--plyr-color-main:yellow;
+
+  --plyr-menu-arrow-size:6px;
+  --plyr-menu-item-arrow-color:#728197;
+  --plyr-menu-item-arrow-size:4px;
+  --plyr-tooltip-arrow-size:4px;
+
+  --plyr-control-icon-size: 18px;
+  --plyr-menu-arrow-size: 6px;
+  --plyr-menu-item-arrow-size: 4px;
+  --plyr-progress-loading-size: 25px;
+  --plyr-tooltip-arrow-size: 4px;
+  --plyr-font-size-base: 15px;
+  --plyr-font-size-small: 13px;
+
+  --plyr-font-size-time:13px;
+  --plyr-font-size-menu:13px;
+  --plyr-font-size-badge:9px;
+
+}
+
 // .form-actions {
 //   display: flex;
 //   align-items: center;
