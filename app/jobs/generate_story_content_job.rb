@@ -13,7 +13,7 @@ class GenerateStoryContentJob < ApplicationJob
 
   def setup_story_properties(story, answer)
     @kid = story.kid
-    non_contextual_answer = fetch_non_contextual_answer
+    non_contextual_answer = @kid.answers.select{|answer| !answer.question.contextual}.sample
     additional_context = non_contextual_answer ? generate_additional_context(non_contextual_answer) : ""
     story.prompt = build_story_prompt(story, answer, additional_context)
   end

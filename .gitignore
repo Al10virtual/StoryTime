@@ -27,8 +27,7 @@
 
 /public/assets
 
-*Ignore le dossier qui contient les speech.mp3 générés
-/public/speech/*
+/public/speech/
 
 
 # Ignore master key for decrypting credentials and more.

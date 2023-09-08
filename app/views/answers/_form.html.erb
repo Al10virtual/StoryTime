@@ -1,4 +1,5 @@
 <%= simple_form_for [@kid, @answer] do |f|  %>
   <%= f.input :content, label: "Votre réponse" %>
+  <%= f.input :question_id, as: :hidden, input_html: {value: question.id} %>
   <%= f.button :submit, class: "btn btn-flat w-100", value: "Valider" %>
 <% end %>

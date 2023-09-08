@@ -1,16 +1,15 @@
 class AnswersController < ApplicationController
   def new
-    @question = Question.where(contextual: false).sample
-    @answer = Answer.new
     @kid = Kid.find(params[:kid_id])
+    questions = Question.where(contextual: false) - @kid.questions
+    @question = questions.sample
+    @answer = Answer.new
   end
 
   def create
     @kid = Kid.find(params[:kid_id])
-    @question = Question.first
     @answer = Answer.new(answer_params)
     @answer.kid = @kid
-    @answer.question = @question
     if @answer.save!
       redirect_to kid_path(@kid)
     else

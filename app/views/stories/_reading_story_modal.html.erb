@@ -12,10 +12,8 @@
           </p>
         </div>
       </div>
-
-      <div class="modal-footer justify-content-center bg-dark text-white reader">
+      <div class="modal-footer justify-content-center bg-dark text-white reader pb-4">
         <% url_speech = (story.audio.attached?) ? story.audio.url.gsub(/\.mpga/, ".mp3") : story.audio_file_name %>
-
         <!--AVEC LE PLAYER HTML5 ET STIMULUS
         <div class="col-auto" data-controller="play" data-play-audio-file-value="<%=url_speech%>"%>
         <div data-controller="play" class="modal-footer justify-content-center bg-dark text-white reader" data-play-audio-file-value="<%=url_speech%>">
@@ -34,16 +32,11 @@
           </audio>
         </div>
          -->
-
-
         <div >
           <audio id="player" controls data-controller="plyr">
             <source src="<%= url_speech%>" type="audio/mp3" />
           </audio>
         </div>
-
-
-
       </div>
     </div>
   </div>
