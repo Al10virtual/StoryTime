@@ -26,25 +26,25 @@ puts "Created #{Family.offset(0).first.name}!"
 
 UserFamily.create!(role: 'parent', family: first_family, user: first_user)
 
-puts "Creating kids..."
+# puts "Creating kids..."
 
-first_kid = Kid.create!(
-  first_name: "Élodie",
-  date_of_birth: Date.new(2018, 5, 12),
-  family: first_family,
-  avatar_file_name: "kid1.jpg"
-)
+# first_kid = Kid.create!(
+#   first_name: "Élodie",
+#   date_of_birth: Date.new(2018, 5, 12),
+#   family: first_family,
+#   avatar_file_name: "kid1.jpg"
+# )
 
-second_kid = Kid.create!(
-  first_name: "Paolo",
-  date_of_birth: Date.new(2016, 10, 9),
-  family: first_family,
-  avatar_file_name: "kid2.jpg"
-)
+# second_kid = Kid.create!(
+#   first_name: "Paolo",
+#   date_of_birth: Date.new(2016, 10, 9),
+#   family: first_family,
+#   avatar_file_name: "kid2.jpg"
+# )
 
-puts "Created kids!"
+# puts "Created kids!"
 
-puts "Creating stories..."
+# puts "Creating stories..."
 
 story1 = Story.create!({
                 title: "La Forêt Perdue",

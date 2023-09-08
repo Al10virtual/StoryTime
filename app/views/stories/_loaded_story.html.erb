@@ -13,12 +13,15 @@
         <div class="card-story-bottom">
           <h4 class="card-title-story-show"><%= story.title %></h4>
           <div class="justify-content-between">
-            <div class="d-flex">
+            <div class="d-flex flex-wrap">
               <span class="badge st-badge rounded-pill text-white text-bg-secondary m-1 p-2">
                 <%= story.theme %>
               </span>
               <span class="badge st-badge rounded-pill text-white text-bg-secondary m-1 p-2">
                 Durée <%= story.length %>
+              </span>
+              <span class="badge st-badge rounded-pill text-white text-bg-secondary m-1 p-2">
+                <%= kid.answers.last.content %>
               </span>
               <span class="badge st-badge rounded-pill text-white text-bg-secondary m-1 p-2">
                 <%= story.created_at.strftime("%d/%m/%Y")%>
@@ -34,6 +37,9 @@
       </div>
     </div>
   </div>
+  <%#= link_to story_path(story), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer l'histoire de cet enfant ?"} do %>
+    <%#= image_tag "icons/trash.svg"%>
+  <%# end %>
   <div style="padding: 100px">
   </div>
 </div>
