@@ -12,3 +12,4 @@ pin "@rails/actioncable", to: "https://cdn.jsdelivr.net/npm/@rails/actioncable@7
 pin "flatpickr", to: "https://ga.jspm.io/npm:flatpickr@4.6.13/dist/esm/index.js"
 pin "plyr", to: "https://ga.jspm.io/npm:plyr@3.7.3/dist/plyr.min.js"
 #pin "plyr", to: "https://cdn.plyr.io/3.7.8/plyr.js"
+#pin "plyr", to: "https://ga.jspm.io/npm:plyr@3.7.8/dist/plyr.min.js"
