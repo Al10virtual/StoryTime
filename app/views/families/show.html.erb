@@ -13,7 +13,7 @@
     <% else %>
       <% @kids.order(:id).reverse.each do |kid| %>
         <%= link_to kid_path(kid), class:'card-family-kid' do %>
-          <% if kid.photo.key.present? %>
+          <% if kid.photo.attached? %>
             <%= cl_image_tag kid.photo.key, class: 'avatar-large mx-auto' %>
           <% else %>
             <%= image_tag(kid.avatar_file_name, class:'avatar-large mx-auto') %>
