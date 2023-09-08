@@ -1,0 +1,21 @@
+.stories-new {
+  .left-arrow > a {
+    position: absolute;
+    top: 24px;
+    left: 12px;
+  }
+  [data-action="split-form#previous"] {
+    position: absolute;
+    top: 17px;
+    left: -1px;
+  }
+}
+.story_theme legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.optional {
+  font-size: 1.2rem;
+  font-weight: bold;
+}

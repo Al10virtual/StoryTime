@@ -1,14 +1,15 @@
 // à revoir
 
 .btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  padding: 8px 24px;
+  color: $light-orange;
+  border: 2px solid $light-orange;
+  padding: 7px 22px;
   border-radius: 50px;
   font-weight: lighter;
-  opacity: 0.6;
+  opacity: 1;
   transition: opacity 0.3s ease;
   margin-top: 8px;
+  font-weight: bold;
 }
 
 .btn-ghost:hover {
@@ -52,6 +53,7 @@
 .custom-button {
   display: inline-block;
   padding: 10px 20px;
+  margin-bottom: 7px;
   background-color: rgb(230, 221, 221);
   color: rgb(31, 18, 18);
   border: none;

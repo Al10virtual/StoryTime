@@ -20,17 +20,15 @@
         <p>Compléter le monde de <%= @kid.first_name %> en cliquant sur +</p>
       <% else %>
         <% @kid.answers.order(:id).reverse.each do |answer| %>
-          <span class="badge st-badge rounded-pill text-white text-bg-secondary m-1 p-2"><%= answer.content.capitalize %>
+          <span class="badge st-badge rounded-pill text-white text-bg-secondary m-1"><%= answer.content.capitalize %>
             <%= link_to answer_path(answer), data: { turbo_method: :delete } do %>
               <%= image_tag "icons/x.svg" %>
             <% end %>
           </span>
         <% end %>
       <% end %>
-      <%= link_to new_kid_answer_path(@kid), class: "align-items-center" do %>
-        <span class="badge st-badge-plus rounded-pill text-white text-bg-secondary m-1 p-2">
-          <i class="fa fa-plus"></i>
-        </span>
+      <%= link_to new_kid_answer_path(@kid), class: "align-items-center", class: "badge st-badge-plus rounded-pill text-white text-bg-secondary m-1" do %>
+        <i class="fa fa-plus"></i>
       <% end %>
     </div>
     <% if @kid.stories.count == 1 %>
@@ -43,16 +41,15 @@
     <div class="cards-story">
       <% @kid.stories.order(:id).reverse.each do |story| %>
         <% next if story.title.blank? %>
-        
         <%= link_to kid_story_path(@kid, story) do %>
           <div class ="card-kid-story">
             <div class="card-top" style="background-image: url(<%= story.image.key.present? ? cl_image_path(story.image.key) : image_path(story.cover_file_name || "conte_de_fee.png") %>)"></div>
             <div class="card-bottom">
+              <h6 class="card-title"><%= story.title&.upcase %></h6>
               <div>
-                <h6 class="card-title"><%= story.title&.upcase %></h6>
-                <p class="card-infos"><%= story.theme %> - durée <%= story.lenght %></p>
+                <p class="card-infos"><%= story.theme %> | Durée <%= story.length %> | Créée le <%= story.created_at.strftime("%d/%m/%Y")%></p>
+                <div class="custom-button">Voir</div>
               </div>
-              <div class="custom-button">Voir</div>
             </div>
           </div>
         <% end %>

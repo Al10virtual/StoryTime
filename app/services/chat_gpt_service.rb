@@ -4,13 +4,11 @@ class ChatGptService
       parameters: {
         model: "gpt-3.5-turbo",
         messages: [
-          {
-            role: "user",
-            content: prompt
-          }
+          { role: "user",
+            content: prompt }
         ],
         temperature: 0.9
-     }).symbolize_keys
+                  }).symbolize_keys
     json_response = response.dig(:choices).first.dig("message", "content").gsub("\n", ' ')
   end
 

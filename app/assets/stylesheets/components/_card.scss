@@ -22,6 +22,9 @@
 
 .card-infos {
   font-size: 0.9rem !important;
+  padding-right: 30px;
+  padding-top: 8px;
+  opacity: 0.5;
 }
 
 .cards-story {
@@ -78,12 +81,22 @@
 }
 
 .card-bottom {
+  height: 130px;
   padding: 20px 20px 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .card-title {
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card-title-story-show {
   font-weight: bold;
 }

@@ -6,13 +6,14 @@
 @import "bootstrap";
 @import "font-awesome";
 
-
-
-
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 @import "stories/index";
+
+body {
+  overscroll-behavior: none;
+}
 
 h1 {
   font-size: 4rem;
@@ -30,8 +31,10 @@ label {
   font-weight: bold;
 }
 
-textarea {
-  text-align: center;
+#typing-field {
+  height: 275px;
+  min-height: 275px;
+  max-height: 275px;
 }
 
 .plyr__controls {
@@ -74,3 +77,9 @@ textarea {
   --plyr-font-size-badge:9px;
 
 }
+
+// .form-actions {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }

@@ -19,6 +19,15 @@
   }
 }
 
+.story_answer_content input {
+  background-color :white;
+
+}
+
+.story_answer_content input:focus {
+  background-color: white;
+}
+
 //Slider
 
 .range-slider {
@@ -30,7 +39,7 @@ input[type="range"] {
   width: 100%;
   height: 8px;
   border-radius: 4px;
-  background: #d3d3d3;
+  background: $primary;
   outline: none;
   padding: 0;
   margin: 0;

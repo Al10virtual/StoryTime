@@ -1,9 +1,16 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'banner.jpg' %>)">
-  <div>
-    <h1>StoryTime</h1>
-    <p>Créez des histoires personnalisées pour vos enfants</p>
-    <%= link_to new_user_registration_path do %>
-      <button class="btn btn-flat w-100">J'y vais !</button>
-    <% end %>
+<div data-controller="animation" class="bg-dark">
+  <canvas id="cnv"></canvas>
+  <div id='stars'></div>
+  <div id='stars2'></div>
+  <div id='stars3'></div>
+  <div id='title'>
+    <span>
+      STORYTIME
+    </span>
+    <br>
+    <span >
+    </span>
+    <p id="tagline">Créez des histoires personalisées<br>pour vos enfants</p>
+    <%= link_to "Raconte-moi une histoire !", @family ? family_path(@family) : new_user_session_path, class: "button-78" %>
   </div>
 </div>

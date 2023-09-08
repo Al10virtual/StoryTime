@@ -30,20 +30,27 @@
   margin-right: auto;
 }
 
-.b-play {
-border-radius: 50%;
-height: 70px;
-width: 70px;
-background: $light-navy;
-display: flex;
-align-items: center;
-justify-content: center;
-position: relative;
-top: -2rem;
-
+.b-add {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  background: $light-navy;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -2rem;
+  box-shadow: 0 0 5px;
+  div {
+    margin-top: 0.5rem;
+  }
+  a {
+    position: relative;
+    top: 17px;
+  }
 }
 
-.bloc-icon.b-play img {
+.bloc-icon.b-add img {
     width: 60px;
     height: 60px;
 }

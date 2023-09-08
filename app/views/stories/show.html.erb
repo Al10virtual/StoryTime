@@ -1,9 +1,13 @@
 <% if @story.title.present? %>
 
   <%= render "stories/loaded_story", kid: @kid, story: @story %>
+  <%= render "shared/mobile_nav" %>
 
 <% else %>
 
   <%= render "stories/pending_story", kid: @kid %>
+  <div class="d-none" id="story-show-navbar">
+    <%= render "shared/mobile_nav" %>
+  </div>
 
 <% end %>

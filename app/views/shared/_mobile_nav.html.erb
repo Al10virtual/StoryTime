@@ -6,15 +6,17 @@
     <% end %>
   </div>
   <% if controller_name == "families" || controller_name == "kids" && action_name == "new" %>
-    <div class="bloc-icon b-play">
+    <div class="bloc-icon b-add">
       <%= link_to new_family_kid_path(@family) do %>
         <%= image_tag "icons/plus.svg"%>
+        <div>Enfant</div>
       <% end %>
     </div>
   <% elsif controller_name == "kids" %>
-    <div class="bloc-icon b-play">
+    <div class="bloc-icon b-add">
       <%= link_to new_kid_story_path(@kid) do %>
         <%= image_tag "icons/plus.svg"%>
+        <div>Story</div>
       <% end %>
     </div>
   <% else %>
