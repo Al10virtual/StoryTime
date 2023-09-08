@@ -38,19 +38,19 @@ label {
 }
 
 .plyr__controls {
-	--plyr-color-main: #0d0d0d00;
+  --plyr-color-main: #0d0d0d00;
   --plyr-audio-controls-background:#f000  ;
   --plyr-audio-control-color:#FC7300;
   --plyr-audio-control-color-hover: #ff9f50;
 	--plyr-range-fill-background: #orange;
-	--plyr-audio-range-track-background: ##ffa5005e;
+  --plyr-control-icon-size: 24px;
+	//--plyr-audio-range-track-background: ##ffa5005e;
 
   --plyr-menu-arrow-size:6px;
   --plyr-menu-item-arrow-color:#728197;
-  --plyr-menu-item-arrow-size:4px;
+  //--plyr-menu-item-arrow-size:4px;
   --plyr-tooltip-arrow-size:4px;
 
-  --plyr-control-icon-size: 18px;
   --plyr-menu-arrow-size: 6px;
   --plyr-menu-item-arrow-size: 4px;
   --plyr-progress-loading-size: 25px;
@@ -58,14 +58,7 @@ label {
   --plyr-font-size-base: 15px;
   --plyr-font-size-small: 13px;
 
-  --plyr-font-size-time:13px;
+  --plyr-font-size-time:17px;
   --plyr-font-size-menu:13px;
   --plyr-font-size-badge:9px;
-
 }
-
-// .form-actions {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
