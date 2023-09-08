@@ -27,7 +27,7 @@
 
 /public/assets
 
-/public/speech/
+/public/speech/*
 
 
 # Ignore master key for decrypting credentials and more.

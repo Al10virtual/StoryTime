@@ -29,17 +29,10 @@ UserFamily.create!(role: 'parent', family: first_family, user: first_user)
 puts "Creating kids..."
 
 first_kid = Kid.create!(
-  first_name: "Élodie",
+  first_name: "Adèle",
   date_of_birth: Date.new(2018, 5, 12),
   family: first_family,
   avatar_file_name: "kid1.jpg"
-)
-
-second_kid = Kid.create!(
-  first_name: "Paolo",
-  date_of_birth: Date.new(2016, 10, 9),
-  family: first_family,
-  avatar_file_name: "kid2.jpg"
 )
 
 puts "Created kids!"
@@ -87,20 +80,6 @@ story3 = Story.create!({
 GenerateStoryAudioJob.perform_now(story3)
 
 puts "Story 3 created!"
-
-story4 = Story.create!({
-                title: "Paolo et le Trésor de Tortuga",
-                theme: "Aventure",
-                content: "Il était une fois, dans un petit port paisible appelé Porto Paolo, un garçon intrépide nommé Paolo. Paolo vivait avec sa grand-mère, Maria, qui lui avait toujours raconté des histoires passionnantes de pirates et de trésors perdus. Paolo adorait ces récits et rêvait de devenir un pirate courageux lui-même. Un matin, alors que le soleil se levait sur l'horizon, un vieux grimoire poussiéreux tomba du grenier de la maison de Maria. Paolo le ramassa et commença à le feuilleter. À sa grande surprise, il trouva une carte au trésor dessinée à l'intérieur, indiquant l'emplacement de l'île mystérieuse de Tortuga d'où les pirates légendaires avaient jadis amassé d'innombrables richesses. Paolo était excité comme jamais. Il savait que c'était sa chance de vivre une véritable aventure de pirate. Il prépara rapidement son petit bateau et se dirigea vers l'océan, suivi de son fidèle perroquet, Rico, qui avait toujours rêvé de voler avec un vrai pirate. La route vers Tortuga était semée d'embûches. Paolo et Rico affrontèrent des tempêtes violentes, évitèrent de justesse des récifs acérés et firent la connaissance de marins légendaires. Finalement, ils atteignirent l'île de Tortuga. Les palmiers ondulaient au vent, et l'île semblait être un véritable paradis pour les pirates. Paolo et Rico fouillèrent l'île de fond en comble, creusant des trous et suivant les indices de la carte au trésor. Après de nombreuses aventures et épreuves, ils découvrirent enfin le trésor tant convoité. Des coffres en bois doré remplis de pièces d'or scintillantes, de perles précieuses et de bijoux étincelants. Mais Paolo savait que la vraie richesse n'était pas dans l'or, mais dans l'aventure qu'il avait vécue et dans les amis qu'il avait rencontrés en cours de route. Il décida de partager sa découverte avec les habitants de Porto Paolo pour améliorer leur vie. Le petit village de Porto Paolo fut transformé par ce trésor inattendu. Paolo et sa grand-mère Maria vécurent heureux et comblés, et le nom de Paolo devint célèbre dans toute la région en tant que courageux capitaine pirate. Paolo avait réalisé son rêve de devenir un pirate, mais il avait également découvert la vraie valeur de l'aventure, de l'amitié et du partage. Et ainsi se termine l'histoire de Paolo, le petit pirate au grand cœur, dont la légende perdura à travers les générations.",
-                kid_id: second_kid.id,
-                length: 0,
-                duration: 200,
-                cover_file_name: "story4.png"
-              })
-
-GenerateStoryAudioJob.perform_now(story4)
-
-puts "Story 4 created!"
 
 puts "Creating questions..."
 
@@ -232,38 +211,6 @@ Answer.create!(
   content: "Marie",
   kid: Kid.first,
   question: question9
-)
-
-puts "Creating answers for #{second_kid.first_name}..."
-
-Answer.create!(
-  content: "Après la pluie",
-  kid: Kid.second,
-  question: question5
-)
-
-Answer.create!(
-  content: "Marie",
-  kid: Kid.second,
-  question: question9
-)
-
-Answer.create!(
-  content: "Les canards",
-  kid: Kid.second,
-  question: question4
-)
-
-Answer.create!(
-  content: "Les pizzas",
-  kid: Kid.second,
-  question: question2
-)
-
-Answer.create!(
-  content: "Flash McQueen",
-  kid: Kid.second,
-  question: question3
 )
 
 puts "Created answers!"
