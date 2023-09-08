@@ -6,7 +6,7 @@
       <% end %>
     </div>
     <div>
-      <% if @kid.photo.key.present? %>
+      <% if @kid.photo.attached? %>
         <%= cl_image_tag @kid.photo.key, class: 'avatar-large d-block mx-auto' %>
       <% else %>
         <%= image_tag(@kid.avatar_file_name, class:'avatar-large d-block mx-auto') %>
