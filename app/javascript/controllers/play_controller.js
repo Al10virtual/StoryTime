@@ -1,7 +1,6 @@
-import { Controller } from "@hotwired/stimulus"
-// import Plyr from 'plyr';
 
-// Connects to data-controller="play"
+import { Controller } from "@hotwired/stimulus";
+
 
 export default class extends Controller {
   static targets = ['playBtn', 'pauseBtn']

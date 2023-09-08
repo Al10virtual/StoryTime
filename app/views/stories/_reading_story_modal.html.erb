@@ -12,15 +12,30 @@
           </p>
         </div>
       </div>
-      <% url_speech = (story.audio.attached?) ? story.audio.url.gsub(/\.mpga/, ".mp3") : story.audio_file_name %>
-      <div data-controller="play" class="modal-footer justify-content-center bg-dark text-white reader" data-play-audio-file-value="<%=url_speech%>">
-        <div class="col-auto">
+      <div class="modal-footer justify-content-center bg-dark text-white reader">
+        <% url_speech = (story.audio.attached?) ? story.audio.url.gsub(/\.mpga/, ".mp3") : story.audio_file_name %>
+        <!--AVEC LE PLAYER HTML5 ET STIMULUS
+        <div class="col-auto" data-controller="play" data-play-audio-file-value="<%=url_speech%>"%>
+        <div data-controller="play" class="modal-footer justify-content-center bg-dark text-white reader" data-play-audio-file-value="<%=url_speech%>">
+
           <div data-play-target="playBtn" data-action="click->play#go">
             <%= image_tag "icons/play-circle.svg" %>
           </div>
           <div class="d-none" data-play-target="pauseBtn" data-action="click->play#pause">
             <%= image_tag "icons/pause-circle.svg" %>
           </div>
+        </div>
+
+        <div>
+          <audio data-controller="plyr" id="player" controls >
+            <source src="<%= url_speech%> " type="audio/mp3" />
+          </audio>
+        </div>
+         -->
+        <div >
+          <audio id="player" controls data-controller="plyr">
+            <source src="<%= url_speech%>" type="audio/mp3" />
+          </audio>
         </div>
       </div>
     </div>
