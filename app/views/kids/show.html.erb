@@ -34,7 +34,7 @@
     <% if @kid.stories.count == 1 %>
       <h2 class="mt-3">Son histoire</h2>
     <% elsif @kid.stories.count == 0 %>
-      <h2>N'a pas encore d'histoire !</h2>
+      <h2 class="mt-3"><%= @kid.first_name %> n'a pas encore d'histoire !</h2>
     <% else %>
       <h2 class="mt-3">Ses <%= @kid.stories.count %> histoires</h2>
     <% end %>

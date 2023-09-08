@@ -1,6 +1,6 @@
 .cards-family {
   display: grid;
-  overflow-x: scroll;
+  overflow-x: auto;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
   margin-top: 2rem;
@@ -30,7 +30,7 @@
 .cards-story {
   display: flex;
   list-style: none;
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   grid-gap: 1rem;
 }
