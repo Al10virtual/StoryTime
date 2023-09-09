@@ -7,11 +7,9 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates   :last_name,
-              presence: true,
-              format: { with: /\A[a-zA-Z]+\z/, message: "Only allows letters.." }
+              presence: true
   validates   :first_name,
-              presence: true,
-              format: { with: /\A[a-zA-Z]+\z/, message: "Only allows letters.." }
+              presence: true
   has_many :user_families
   has_many :families, through: :user_families, dependent: :destroy
   has_many :my_families, class_name: 'Family'
